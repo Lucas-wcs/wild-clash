@@ -1,10 +1,13 @@
 import React from "react";
-import ChooseFighter from "./pages/ChooseFighter";
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
 
 function App() {
+  console.warn("app");
   return (
     <div>
-      <ChooseFighter />
+      <Header />
+      <Outlet />
     </div>
   );
 }
