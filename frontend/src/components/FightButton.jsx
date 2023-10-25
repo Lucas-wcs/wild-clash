@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const fighters = [
   {
@@ -9,10 +10,21 @@ const fighters = [
   {
     name: "Dark Vador",
     force: 50,
+    image: "/public/images/goku.png",
   },
 ];
 
 function FightButton() {
+  const navigate = useNavigate();
+
+  const handleFight = () => {
+    if (fighters[0].force > fighters[1].force) {
+      navigate("/winner");
+    } else {
+      navigate("/loser");
+    }
+  };
+
   const [count, setCount] = useState(3);
 
   useEffect(() => {
@@ -34,17 +46,26 @@ function FightButton() {
         <div>
           <img
             src={fighters[0].image}
-            className="imageFigther1"
+            className="imageFigther animation1"
             alt="fighter1"
           />
           <div>{fighters[0].name}</div>
         </div>
         {count === 0 ? (
-          <button type="button">Figth !</button>
+          <button type="button" onClick={handleFight}>
+            Fight !
+          </button>
         ) : (
           <div className="timer">{count}</div>
         )}
-        <div>{fighters[1].name}</div>
+        <div>
+          <img
+            src={fighters[1].image}
+            className="imageFigther animation2"
+            alt="fighter2"
+          />
+          <div>{fighters[1].name}</div>
+        </div>
       </div>
     </div>
   );
