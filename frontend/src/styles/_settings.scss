@@ -2,14 +2,14 @@
   font-family: "Nico-Moji";
   src:
     local("NicoMoji-Regular"),
-    url("./font/NicoMoji-Regular.ttf") format("truetype");
+    url("/font/NicoMoji-Regular.ttf") format("truetype");
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Nico-Moji";
+  font-family: "Nico-Moji" !important;
   --hero-color: #0075ff;
   --vilain-color: #ff0000;
   --secondary-color: #ffde59;
