@@ -1,5 +1,5 @@
 function WikiHero() {
-  return <div>WikiHero</div>;
+  return <div>W</div>;
 }
 
 export default WikiHero;

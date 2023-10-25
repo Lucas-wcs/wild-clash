@@ -55,10 +55,11 @@ console.info(heros);
 //     ))}
 
 function App() {
-  console.warn("app");
   return (
-    <div>
-      <Header />
+    <div className="body">
+      <div className="header">
+        <Header />
+      </div>
       <Outlet />
     </div>
   );

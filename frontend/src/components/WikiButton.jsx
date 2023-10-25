@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function WikiButton() {
   return (
-    <div>
+    <div className="wikibutton">
       <NavLink to="/wikihero">WikiHero</NavLink>
     </div>
   );

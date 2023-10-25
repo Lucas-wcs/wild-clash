@@ -4,7 +4,9 @@ import { NavLink } from "react-router-dom";
 function HomeButton() {
   return (
     <div>
-      <NavLink to="/">Home</NavLink>
+      <NavLink className="homebutton" to="/">
+        <img src="/public/images/LogoHomeButton.png" alt="Home" />
+      </NavLink>
     </div>
   );
 }

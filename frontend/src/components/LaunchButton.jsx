@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function WikiButton() {
+function LaunchButton() {
   return (
     <div>
       <NavLink to="/choosefighter">Launch the fight</NavLink>
@@ -9,4 +9,4 @@ function WikiButton() {
   );
 }
 
-export default WikiButton;
+export default LaunchButton;
