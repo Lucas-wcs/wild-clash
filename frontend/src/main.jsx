@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App";
+import App, { loadDatas } from "./App";
 import "./styles/index.scss";
 import WikiHero from "./components/WikiButton";
 import Home from "./pages/Home";
@@ -22,22 +22,27 @@ const router = createBrowserRouter([
       {
         path: "/wikihero",
         element: <WikiHero />,
+        loader: loadDatas,
       },
       {
         path: "/choosefighter",
         element: <ChooseFighter />,
+        loader: loadDatas,
       },
       {
         path: "/fight",
         element: <FightPage />,
+        loader: loadDatas,
       },
       {
         path: "/winner",
         element: <WinnerPage />,
+        loader: loadDatas,
       },
       {
         path: "/loser",
         element: <LooserPage />,
+        loader: loadDatas,
       },
     ],
   },
