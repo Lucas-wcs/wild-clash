@@ -11,7 +11,11 @@ function Home() {
         src="public/images/homePage.png"
         alt="stormy background"
       />
-      <img className="logo" src="public/images/homeLogo.png" alt="homeLogo" />
+      <img
+        className="homelogo"
+        src="public/images/homeLogo.png"
+        alt="homeLogo"
+      />
       <WikiButton />
     </div>
   );
