@@ -37,25 +37,13 @@
     height: 100%;
     overflow: hidden;
   }
-  .logo {
+  .homelogo {
     z-index: 1;
     position: absolute;
     width: 60%;
     bottom: 33%;
     left: 50%;
     transform: translate(-50%);
-  }
-  button {
-    z-index: 1;
-    position: absolute;
-    bottom: 7%;
-    left: 50%;
-    transform: translateX(-50%);
-    .launch {
-      text-decoration: none;
-      color: #ffde59;
-      font-weight: 900;
-    }
   }
   .wiki {
     z-index: 1;

@@ -18,9 +18,9 @@ function LaunchButton() {
   return (
     <div>
       <button
+        className="launchButton"
         type="button"
         onClick={handleDelayedNavigation}
-        className="launch"
         ref={button}
       >
         {" "}
