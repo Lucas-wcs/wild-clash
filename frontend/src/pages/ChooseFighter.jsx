@@ -8,7 +8,9 @@ function ChooseFighter() {
   const [selectHero2, setSelectHero2] = useState("");
   const navigate = useNavigate();
   const handlePage = () => {
-    navigate("/fight");
+    navigate("/fight", {
+      state: { selectHero1, selectHero2 },
+    });
   };
 
   return (
