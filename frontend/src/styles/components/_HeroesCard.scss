@@ -1,13 +1,12 @@
 .contenerImage {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  gap: 5px;
 }
 
 .sizeChooseFighter {
   transition: transform 0.1s;
-  width: 120px;
-  gap: 2px;
+  width: 100px;
   border-radius: 10px;
   &:hover {
     cursor: pointer;
