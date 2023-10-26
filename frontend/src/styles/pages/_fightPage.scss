@@ -4,4 +4,12 @@
   background-size: cover;
   color: white;
   filter: grayscale(40%);
+  font-size: 2em;
+  height: 100vh;
+  width: 100vw;
+
+  .logoFight {
+    display: flex;
+    justify-content: center;
+  }
 }

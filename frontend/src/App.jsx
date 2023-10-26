@@ -13,9 +13,7 @@ function App() {
     </div>
   );
 }
-
 export default App;
-
 export const loadDatas = async () => {
   const endpoints = [
     "https://www.superheroapi.com/api.php/10232380959845753/346",
@@ -43,7 +41,6 @@ export const loadDatas = async () => {
     "https://www.superheroapi.com/api.php/10232380959845753/526",
     "https://www.superheroapi.com/api.php/10232380959845753/485",
   ];
-
   const heroes = await axios.all(
     endpoints.map((endpoint) => axios.get(endpoint))
   );
