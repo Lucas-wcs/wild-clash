@@ -10,25 +10,7 @@
   width: 100vw;
   height: 68vh;
   flex-shrink: 0;
-  justify-content: space-between;
-
-  p {
-    color: #d9d9d9;
-    font-size: 25px;
-  }
-  button {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 45%;
-    width: 40%;
-    height: 40px;
-    border-radius: 50px;
-    color: white;
-    font-size: 20px;
-    background-color: black;
-    border-radius: white;
-  }
+  justify-content: space-around;
 
   img {
     border-radius: 20px;
@@ -36,49 +18,33 @@
   }
 }
 
-.BoxImage {
+.buttonFight {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 45%;
+  width: 40%;
+  height: 40px;
+  border-radius: 50px;
+  color: white;
+  font-size: 20px;
+  background-color: black;
+  border-radius: white;
+}
+
+.choiceHero {
+  border: none;
+}
+
+.boxSelected {
+  width: 300px;
+}
+
+.displayHeroesSelected {
   display: flex;
-  width: 100%;
-  height: 30vh;
+  align-items: center;
+}
 
-  section {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .div1,
-  .div2,
-  .div3,
-  .div4,
-  .div5,
-  .div6,
-  .div7,
-  .div8,
-  .div9,
-  .div10,
-  .div11,
-  .div12,
-  .div13,
-  .div14,
-  .div15,
-  .div16,
-  .div17,
-  .div18,
-  .div19,
-  .div20,
-  .div21,
-  .div22,
-  .div23,
-  .div24 {
-    background-color: rgb(166, 166, 212);
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    margin-left: 5px;
-    transition: transform 0.1s;
-    cursor: pointer;
-
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
+.selectHero1 {
+  margin-right: 10px;
 }

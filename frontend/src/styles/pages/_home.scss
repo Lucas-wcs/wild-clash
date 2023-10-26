@@ -2,20 +2,67 @@
   width: 100vw;
   height: 100vh;
   position: relative;
+  opacity: 1;
+  -webkit-animation: flash 2s;
+  animation: flash 2s;
 
-  img {
+  @keyframes flash {
+    0% {
+      opacity: 0.2;
+    }
+    10% {
+      opacity: 1;
+    }
+    12% {
+      opacity: 0.2;
+    }
+    14% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    65% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .background {
     z-index: 0;
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
   }
-  .launch,
+  .logo {
+    z-index: 1;
+    position: absolute;
+    width: 60%;
+    bottom: 33%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  button {
+    z-index: 1;
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    .launch {
+      text-decoration: none;
+      color: #ffde59;
+      font-weight: 900;
+    }
+  }
   .wiki {
     z-index: 1;
     position: absolute;
-    bottom: 10px; /* Ajustez la valeur pour la position verticale souhaitée */
-    left: 50%; /* Ajustez cette valeur pour la position horizontale souhaitée */
-    transform: translateX(-50%); /* Centre le lien horizontalement */
+    width: 75px;
+    height: 56.25px;
+    bottom: 7%;
+    right: 4%;
   }
 }

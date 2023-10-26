@@ -5,8 +5,13 @@ import WikiButton from "../components/WikiButton";
 function Home() {
   return (
     <div className="home">
-      <img src="public\images\homePage.png" alt="storm background" />
       <LaunchButton />
+      <img
+        className="background"
+        src="public/images/homePage.png"
+        alt="stormy background"
+      />
+      <img className="logo" src="public/images/homeLogo.png" alt="homeLogo" />
       <WikiButton />
     </div>
   );
