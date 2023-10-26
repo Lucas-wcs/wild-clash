@@ -1,31 +1,32 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLoaderData } from "react-router-dom";
+import { PropTypes } from "prop-types";
 
-const fighters = [
-  {
-    name: "captain America",
-    force: 32,
-    image: "/public/images/captain.png",
-  },
-  {
-    name: "Dark Vador",
-    force: 50,
-    image: "/public/images/goku.png",
-  },
-];
-
-function FightButton() {
+function FightButton({ imgFighter1, imgFighter2 }) {
+  const heroes = useLoaderData();
   const navigate = useNavigate();
-  const handleFight = () => {
-    if (fighters[0].force > fighters[1].force) {
-      navigate("/winner");
-    } else {
-      navigate("/loser");
+
+  const [heroName1, setHeroName1] = useState("");
+  const [heroName2, setHeroName2] = useState("");
+
+  useEffect(() => {
+    const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
+    if (hero1) {
+      setHeroName1(hero1.data.name);
     }
+    const hero2 = heroes.find((hero) => hero.data.image.url === imgFighter2);
+    if (hero2) {
+      setHeroName2(hero2.data.name);
+    }
+  }, [heroes, imgFighter1, imgFighter2]);
+
+  const handleFight = () => {
+    navigate("/winner", {
+      state: { imgFighter1, imgFighter2 },
+    });
   };
 
   const [count, setCount] = useState(3);
-
   useEffect(() => {
     const countdownInterval = setInterval(() => {
       if (count > 0) {
@@ -41,17 +42,17 @@ function FightButton() {
 
   return (
     <div className="buttonFightTimer">
-      <div className="buttonFight">
+      <div className="fightButton">
         <div>
           <img
-            src={fighters[0].image}
             className="imageFigther animation1"
+            src={imgFighter1}
             alt="fighter1"
           />
-          <div>{fighters[0].name}</div>
+          <div>{heroName1}</div>
         </div>
         {count === 0 ? (
-          <button type="button" onClick={handleFight}>
+          <button className="resultFight" type="button" onClick={handleFight}>
             Fight !
           </button>
         ) : (
@@ -59,15 +60,20 @@ function FightButton() {
         )}
         <div>
           <img
-            src={fighters[1].image}
             className="imageFigther animation2"
+            src={imgFighter2}
             alt="fighter2"
           />
-          <div>{fighters[1].name}</div>
+          <div>{heroName2}</div>
         </div>
       </div>
     </div>
   );
 }
+
+FightButton.propTypes = {
+  imgFighter1: PropTypes.string.isRequired,
+  imgFighter2: PropTypes.string.isRequired,
+};
 
 export default FightButton;

@@ -3,13 +3,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  filter: grayscale(40%);
   font-size: 2em;
   height: 100vh;
   width: 100vw;
 
-  .logoFight {
+  .logoBox {
     display: flex;
     justify-content: center;
+  }
+
+  .logoFight {
+    width: 40%;
   }
 }
