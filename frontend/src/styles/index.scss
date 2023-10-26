@@ -1,4 +1,4 @@
-@import "settings";
+@import "./pages/settings";
 @import "./pages/pageChooseFighter";
 @import "./components/fightButton";
 @import "./components/homeButton";
@@ -8,3 +8,4 @@
 @import "./pages/fightPage";
 @import "./pages/home";
 @import "./components/healthBar";
+@import "./components/HeroesCard";
