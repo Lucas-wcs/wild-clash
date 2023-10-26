@@ -4,7 +4,9 @@ import { NavLink } from "react-router-dom";
 function LaunchButton() {
   return (
     <div>
-      <NavLink to="/choosefighter">Launch the fight</NavLink>
+      <NavLink to="/choosefighter" className="launch">
+        Launch the fight
+      </NavLink>
     </div>
   );
 }
