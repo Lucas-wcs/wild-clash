@@ -2,19 +2,26 @@
   background-image: url("../public/images/fond_choice_perso.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-right: 10px;
 }
 
 .BoxParent {
-  display: flex;
-  width: 100vw;
-  height: 68vh;
-  flex-shrink: 0;
-  justify-content: space-around;
+  width: 100%;
+  height: 50vh;
+  padding-bottom: 30px;
+
+  .fighterContainer {
+    display: flex;
+    justify-content: space-around;
+  }
 
   img {
     border-radius: 20px;
-    margin: 30px auto;
   }
 }
 
@@ -22,7 +29,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 45%;
+  top: 40%;
   width: 40%;
   height: 40px;
   border-radius: 50px;
@@ -34,10 +41,11 @@
 
 .choiceHero {
   border: none;
+  background: none;
 }
 
 .boxSelected {
-  width: 300px;
+  width: 250px;
 }
 
 .displayHeroesSelected {
@@ -47,4 +55,11 @@
 
 .selectHero1 {
   margin-right: 10px;
+}
+
+.vs {
+  font-size: 45px;
+  color: white;
+  display: flex;
+  align-items: center;
 }

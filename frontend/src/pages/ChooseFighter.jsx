@@ -12,41 +12,43 @@ function ChooseFighter() {
   };
 
   return (
-    <div>
+    <div className="ChooseFighter">
       <div className="BoxParent">
-        {selectHero1 === "" ? (
-          ""
-        ) : (
-          <div className="displayHeroesSelected">
-            <img
-              className="selectHero1 boxSelected"
-              src={selectHero1}
-              alt="fighter1"
-            />
-          </div>
-        )}
-        {selectHero1 !== "" ? <p className="vs">VS</p> : ""}
+        <div className="fighterContainer">
+          {selectHero1 === "" ? (
+            ""
+          ) : (
+            <div className="displayHeroesSelected">
+              <img
+                className="selectHero1 boxSelected"
+                src={selectHero1}
+                alt="fighter1"
+              />
+            </div>
+          )}
+          {selectHero1 !== "" ? <p className="vs">VS</p> : ""}
 
-        {selectHero2 === "" ? (
-          ""
+          {selectHero2 === "" ? (
+            ""
+          ) : (
+            <div>
+              <img
+                className="selectHero2 boxSelected"
+                src={selectHero2}
+                alt="fighter2"
+              />
+            </div>
+          )}
+        </div>
+
+        {selectHero1 !== "" && selectHero2 !== "" ? (
+          <button type="button" className="buttonFight" onClick={handlePage}>
+            Fight
+          </button>
         ) : (
-          <div>
-            <img
-              className="selectHero2 boxSelected"
-              src={selectHero2}
-              alt="fighter2"
-            />
-          </div>
+          ""
         )}
       </div>
-
-      {selectHero1 !== "" && selectHero2 !== "" ? (
-        <button type="button" className="buttonFight" onClick={handlePage}>
-          Fight
-        </button>
-      ) : (
-        ""
-      )}
 
       <HeroesCard
         selectHero1={selectHero1}
