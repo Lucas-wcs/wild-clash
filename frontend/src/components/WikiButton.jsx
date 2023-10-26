@@ -5,7 +5,7 @@ function WikiButton() {
   return (
     <div className="wikibutton">
       <NavLink to="/wikihero" className="wiki">
-        WikiHero
+        <img src="../public/images/wiki.png" alt="Wiki" />
       </NavLink>
     </div>
   );
