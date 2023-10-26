@@ -16,7 +16,6 @@ const fighters = [
 
 function FightButton() {
   const navigate = useNavigate();
-
   const handleFight = () => {
     if (fighters[0].force > fighters[1].force) {
       navigate("/winner");
