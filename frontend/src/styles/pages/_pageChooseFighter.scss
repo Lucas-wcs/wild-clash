@@ -1,27 +1,20 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
+.ChooseFighter {
   background-image: url("../public/images/fond_choice_perso.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
 }
 
 .BoxParent {
   display: flex;
-  width: 100%;
-  height: 60vh;
+  width: 100vw;
+  height: 68vh;
   flex-shrink: 0;
   justify-content: space-between;
-  margin-top: 50px;
 
   p {
     color: #d9d9d9;
     font-size: 25px;
-    margin-top: 15%;
   }
   button {
     position: absolute;
@@ -47,7 +40,6 @@ body {
   display: flex;
   width: 100%;
   height: 30vh;
-  margin-top: 10px;
 
   section {
     display: flex;
