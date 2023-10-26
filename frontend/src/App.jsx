@@ -1,10 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import axios from "axios";
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 
 function App() {
-  const [heros, setHeros] = useState([]);
+  return (
+    <div className="body">
+      <div className="header">
+        <Header />
+      </div>
+      <Outlet />
+    </div>
+  );
+}
+
+export default App;
+
+export const loadDatas = async () => {
   const endpoints = [
     "https://www.superheroapi.com/api.php/10232380959845753/346",
     "https://www.superheroapi.com/api.php/10232380959845753/310",
@@ -32,36 +44,8 @@ function App() {
     "https://www.superheroapi.com/api.php/10232380959845753/485",
   ];
 
-  function fetchHeroes() {
-    axios
-      .all(endpoints.map((endpoint) => axios.get(endpoint)))
-      .then((res) => setHeros(res))
-      .catch((err) => console.info(err));
-  }
-
-  useEffect(() => {
-    fetchHeroes();
-  }, []);
-
-  console.info(heros);
-
-  // return (
-  //   <div>
-  //     {heros.map((hero) => (
-  //       <DisplayHero
-  //         key={hero.data.name}
-  //         url={hero.data.image.url}
-  //         name={hero.data.name}
-  //       />
-  //     ))}
-  return (
-    <div className="body">
-      <div className="header">
-        <Header />
-      </div>
-      <Outlet />
-    </div>
+  const heroes = await axios.all(
+    endpoints.map((endpoint) => axios.get(endpoint))
   );
-}
-
-export default App;
+  return heroes;
+};
