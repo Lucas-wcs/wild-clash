@@ -1,28 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { PropTypes } from "prop-types";
 // import { useState } from "react";
 
 function ChooseFighter() {
   // const [position, setPosition] = useState(0);
-
+  const navigate = useNavigate();
+  const handlePage = () => {
+    navigate("/fight");
+  };
   const [selectedFighter] = useState(null);
-
-  // const handleclick = (e) => {
-  //   setSelectedFighter({ nom: "ironman" });
-  // };
   return (
-    <div>
+    <div className="ChooseFighter">
       <div className="BoxParent">
         {selectedFighter && <p>{selectedFighter.nom}</p>}
 
-        <button type="button">Fight !</button>
+        <button type="button" onClick={handlePage}>
+          Fight !
+        </button>
         <p>VS</p>
         <img src="" alt="" />
       </div>
       <div className="BoxImage">
         <section className="lot1">
-          {/* <div className="div1" onClick={handleclick}>
-            <img src="../public/images/ironman.png" alt="ironman" />
-          </div> */}
+          <div className="div1">1</div>
           <div className="div2">2</div>
           <div className="div3">3</div>
           <div className="div4">4</div>
@@ -53,5 +54,9 @@ function ChooseFighter() {
     </div>
   );
 }
+
+ChooseFighter.propTypes = {
+  heros: PropTypes.arrayOf(PropTypes.string).isRequired,
+}.isRequired;
 
 export default ChooseFighter;
