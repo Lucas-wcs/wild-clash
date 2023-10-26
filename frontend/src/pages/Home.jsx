@@ -4,7 +4,8 @@ import WikiButton from "../components/WikiButton";
 
 function Home() {
   return (
-    <div>
+    <div className="home">
+      <img src="public\images\homePage.png" alt="storm background" />
       <LaunchButton />
       <WikiButton />
     </div>

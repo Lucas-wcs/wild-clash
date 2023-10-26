@@ -1,9 +1,9 @@
 @import "settings";
-@import "_pageChooseFighter";
-@import "fightButton";
-@import "homeButton";
-@import "header";
-@import "wikiButton";
-@import "app";
-@import "fightPage";
-
+@import "./pages/pageChooseFighter";
+@import "./components/fightButton";
+@import "./components/homeButton";
+@import "./components/header";
+@import "./components/wikiButton";
+@import "./pages/app";
+@import "./pages/fightPage";
+@import "./pages/home";

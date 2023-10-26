@@ -1,0 +1,21 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  img {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .launch,
+  .wiki {
+    z-index: 1;
+    position: absolute;
+    bottom: 10px; /* Ajustez la valeur pour la position verticale souhaitée */
+    left: 50%; /* Ajustez cette valeur pour la position horizontale souhaitée */
+    transform: translateX(-50%); /* Centre le lien horizontalement */
+  }
+}
