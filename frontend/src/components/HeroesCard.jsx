@@ -1,46 +1,39 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { useLoaderData } from "react-router-dom";
+import DisplayHero from "./DisplayHero";
 
-function HeroesCard() {
+function HeroesCard({
+  selectHero1,
+  selectHero2,
+  setSelectHero1,
+  setSelectHero2,
+}) {
+  const allHeroes = useLoaderData();
+
   return (
     <div>
-      <div className="BoxParent">
-        <button type="button">Fight !</button>
-        <p>VS</p>
-        <img src="" alt="" />
-      </div>
-      <div className="BoxImage">
-        <section className="lot1">
-          <div className="div1">
-            <img src="../public/images/ironman.png" alt="ironman" />
-          </div>
-          <div className="div2">2</div>
-          <div className="div3">3</div>
-          <div className="div4">4</div>
-          <div className="div5">5</div>
-          <div className="div6">6</div>
-          <div className="div7">7</div>
-          <div className="div8">8</div>
-          <div className="div9">9</div>
-          <div className="div10">10</div>
-          <div className="div11">11</div>
-          <div className="div12">12</div>
-        </section>
-        <section className="lot2">
-          <div className="div13">13</div>
-          <div className="div14">14</div>
-          <div className="div15">15</div>
-          <div className="div16">16</div>
-          <div className="div17">17</div>
-          <div className="div18">18</div>
-          <div className="div19">19</div>
-          <div className="div20">20</div>
-          <div className="div21">21</div>
-          <div className="div22">22</div>
-          <div className="div23">23</div>
-          <div className="div24">24</div>
-        </section>
+      <div className="contenerImage">
+        {allHeroes.map((her) => (
+          <DisplayHero
+            selectHero1={selectHero1}
+            selectHero2={selectHero2}
+            setSelectHero1={setSelectHero1}
+            setSelectHero2={setSelectHero2}
+            key={her.data.name}
+            url={her.data.image.url}
+            name={her.data.name}
+          />
+        ))}
       </div>
     </div>
   );
 }
+
+HeroesCard.propTypes = {
+  selectHero1: PropTypes.string.isRequired,
+  setSelectHero1: PropTypes.string.isRequired,
+  setSelectHero2: PropTypes.string.isRequired,
+  selectHero2: PropTypes.string.isRequired,
+};
 export default HeroesCard;
