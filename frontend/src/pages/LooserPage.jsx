@@ -1,13 +1,24 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function LooserPage() {
+  const navigate = useNavigate();
+
+  const handleNewGame = () => {
+    navigate("/chooseFighter");
+  };
+
   return (
     <div className="firstContainer2">
       <div>
         <img src="../public/images/captainamerica.png" alt="CaptainAmerica" />
         <div className="secondContainer2">
           <p className="firstText2">You Lose !</p>
-          <button type="button" className="firstButton2">
+          <button
+            type="button"
+            className="firstButton2"
+            onClick={handleNewGame}
+          >
             New Game
           </button>
         </div>
