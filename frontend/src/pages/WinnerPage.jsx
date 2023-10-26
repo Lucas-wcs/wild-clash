@@ -1,8 +1,13 @@
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function WinnerPage() {
   const location = useLocation();
   const urlImgFighter1 = location.state.imgFighter1;
+  const navigate = useNavigate();
+
+  const handleNewGame = () => {
+    navigate("/chooseFighter");
+  };
 
   return (
     <div className="firstContainer">
@@ -10,7 +15,7 @@ function WinnerPage() {
         <img src={urlImgFighter1} alt="winner" />
         <div className="secondContainer">
           <p className="firstText">You Win !</p>
-          <button type="button" className="firstButton">
+          <button type="button" className="firstButton" onClick={handleNewGame}>
             New Game
           </button>
         </div>
