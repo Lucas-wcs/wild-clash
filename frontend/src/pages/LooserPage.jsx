@@ -1,7 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function LooserPage() {
+  const location = useLocation();
+  const urlImgFighter1 = location.state.imgFighter1;
   const navigate = useNavigate();
 
   const handleNewGame = () => {
@@ -11,7 +13,7 @@ function LooserPage() {
   return (
     <div className="firstContainer2">
       <div>
-        <img src="../public/images/captainamerica.png" alt="CaptainAmerica" />
+        <img src={urlImgFighter1} alt="Fighter1" />
         <div className="secondContainer2">
           <p className="firstText2">You Lose !</p>
           <button
