@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLoaderData } from "react-router-dom";
+import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
 function FightButton({ imgFighter1, imgFighter2 }) {
-  const heroes = useLoaderData();
+  const heroes = useRouteLoaderData("app");
   const navigate = useNavigate();
 
   const [heroName1, setHeroName1] = useState("");
