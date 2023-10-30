@@ -6,7 +6,6 @@ import useScreenOrientation from "./components/useScreenOrientation";
 
 function App() {
   const orientation = useScreenOrientation();
-  // return <p>{orientation}</p>;
 
   return (
     <div>
