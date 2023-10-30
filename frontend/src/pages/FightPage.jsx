@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import FightButton from "../components/FightButton";
+
 // import HealthBar from "../components/HealthBar";
 
 function FightPage() {

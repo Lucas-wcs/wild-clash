@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useLoaderData } from "react-router-dom";
+import { useRouteLoaderData } from "react-router-dom";
 import DisplayHero from "./DisplayHero";
 
 function HeroesCard({
@@ -9,7 +9,7 @@ function HeroesCard({
   setSelectHero1,
   setSelectHero2,
 }) {
-  const allHeroes = useLoaderData();
+  const allHeroes = useRouteLoaderData("app");
 
   return (
     <div>

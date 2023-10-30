@@ -1,8 +1,8 @@
-import { useLoaderData } from "react-router-dom";
+import { useRouteLoaderData } from "react-router-dom";
 import WikiCard from "../components/WikiCard";
 
 function WikiHero() {
-  const allHeroes = useLoaderData();
+  const allHeroes = useRouteLoaderData("app");
   return (
     <div className="wikiHero">
       {allHeroes.map((hero) => (
