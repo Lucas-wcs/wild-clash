@@ -21,6 +21,7 @@
 
     img {
       border-radius: 20px;
+      margin-top: 5px;
     }
   }
 
@@ -36,6 +37,7 @@
     font-size: 20px;
     background-color: black;
     border-radius: white;
+    cursor: pointer;
   }
 
   .choiceHero {
@@ -62,7 +64,56 @@
     display: flex;
     align-items: center;
   }
-}
-
-@media screen and (max-width: 1260px) {
+  @media screen and (max-width: 1268px) {
+    .sizeChooseFighter {
+      width: 90px;
+    }
+    .boxSelected {
+      width: 230px;
+    }
+    .buttonFight {
+      top: 30%;
+    }
+  }
+  @media screen and (max-width: 1170px) {
+    .sizeChooseFighter {
+      width: 75px;
+    }
+  }
+  @media screen and (max-width: 989px) {
+    .sizeChooseFighter {
+      width: 60px;
+    }
+    .boxSelected {
+      width: 200px;
+    }
+  }
+  @media screen and (max-width: 901px) {
+    .boxSelected {
+      width: 150px;
+    }
+    @media screen and (max-width: 805px) {
+      .sizeChooseFighter {
+        width: 50px;
+      }
+    }
+  }
+  @media screen and (max-height: 490px) {
+    .buttonFight {
+      top: 35%;
+    }
+  }
+  @media screen and (max-height: 420px) {
+    .buttonFight {
+      top: 30%;
+    }
+    .boxSelected {
+      width: 120px;
+    }
+  }
+  @media (max-width: 700px) and (max-height: 360px) {
+    .buttonFight {
+      height: 35px;
+    }
+  }
 }
