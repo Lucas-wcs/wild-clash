@@ -5,25 +5,38 @@ import { PropTypes } from "prop-types";
 function FightButton({ imgFighter1, imgFighter2 }) {
   const heroes = useRouteLoaderData("app");
   const navigate = useNavigate();
+  let fighter1Stat = "";
+  let fighter2Stat = "";
 
   const [heroName1, setHeroName1] = useState("");
   const [heroName2, setHeroName2] = useState("");
 
   useEffect(() => {
     const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
-    if (hero1) {
-      setHeroName1(hero1.data.name);
-    }
     const hero2 = heroes.find((hero) => hero.data.image.url === imgFighter2);
-    if (hero2) {
+    if (hero1 && hero2) {
+      setHeroName1(hero1.data.name);
       setHeroName2(hero2.data.name);
     }
   }, [heroes, imgFighter1, imgFighter2]);
 
   const handleFight = () => {
-    navigate("/winner", {
-      state: { imgFighter1, imgFighter2 },
-    });
+    const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
+    const hero2 = heroes.find((hero) => hero.data.image.url === imgFighter2);
+    if (hero1 && hero2) {
+      fighter1Stat = parseInt(hero1.data.powerstats.strength, 10);
+      fighter2Stat = parseInt(hero2.data.powerstats.strength, 10);
+    }
+
+    if (fighter1Stat > fighter2Stat) {
+      navigate("/winner", {
+        state: { imgFighter1, imgFighter2 },
+      });
+    } else {
+      navigate("/loser", {
+        state: { imgFighter1, imgFighter2 },
+      });
+    }
   };
 
   const [count, setCount] = useState(3);
