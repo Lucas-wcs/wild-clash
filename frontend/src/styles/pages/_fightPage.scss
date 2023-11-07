@@ -3,7 +3,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 2%;
+  font-size: 1.5em;
   height: 100vh;
   width: 100vw;
 
@@ -14,5 +18,17 @@
 
   .logoFight {
     width: 40%;
+  }
+
+  @media (max-width: 1100px) {
+    .logoFight {
+      width: 30%;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .fightPage {
+    font-size: 1em;
   }
 }

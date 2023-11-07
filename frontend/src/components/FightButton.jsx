@@ -45,7 +45,7 @@ function FightButton({ imgFighter1, imgFighter2 }) {
       <div className="fightButton">
         <div>
           <img
-            className="imageFigther animation1"
+            className="imageFighter animation1"
             src={imgFighter1}
             alt="fighter1"
           />
@@ -60,7 +60,7 @@ function FightButton({ imgFighter1, imgFighter2 }) {
         )}
         <div>
           <img
-            className="imageFigther animation2"
+            className="imageFighter animation2"
             src={imgFighter2}
             alt="fighter2"
           />

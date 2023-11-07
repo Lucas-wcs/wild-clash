@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import FightButton from "../components/FightButton";
 
-// import HealthBar from "../components/HealthBar";
+import HealthBar from "../components/HealthBar";
 
 function FightPage() {
   const location = useLocation();
@@ -17,7 +17,7 @@ function FightPage() {
           alt="Logo Clash Heroes"
         />
       </div>
-      {/* <HealthBar /> */}
+      <HealthBar />
       <FightButton imgFighter1={imgFighter1} imgFighter2={imgFighter2} />
     </div>
   );
