@@ -2,12 +2,18 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
-function FightButton({ imgFighter1, imgFighter2 }) {
+function FightButton({ setProgressLife, imgFighter1, imgFighter2 }) {
   const heroes = useRouteLoaderData("app");
   const navigate = useNavigate();
 
   const [heroName1, setHeroName1] = useState("");
   const [heroName2, setHeroName2] = useState("");
+
+  useEffect(() => {
+    setInterval(() => {
+      setProgressLife(0);
+    }, 3000);
+  }, []);
 
   useEffect(() => {
     const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
@@ -72,6 +78,7 @@ function FightButton({ imgFighter1, imgFighter2 }) {
 }
 
 FightButton.propTypes = {
+  setProgressLife: PropTypes.func.isRequired,
   imgFighter1: PropTypes.string.isRequired,
   imgFighter2: PropTypes.string.isRequired,
 };
