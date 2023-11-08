@@ -1,13 +1,14 @@
 .contenerImage .carousel-container {
   height: 200px;
   ul {
-    gap: 15px;
+    gap: 40px;
   }
 }
 
 .sizeChooseFighter {
-  transition: transform 0.1s;
+  transition: transform 0.2s;
   width: 100px;
+  margin-top: 60%;
   border-radius: 10px;
   &:hover {
     cursor: pointer;

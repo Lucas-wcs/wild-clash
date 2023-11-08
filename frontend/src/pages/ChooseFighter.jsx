@@ -40,6 +40,7 @@ function ChooseFighter() {
 
   return (
     <div className="ChooseFighter">
+      <h1 className="titlePage">Choose Your Hero</h1>
       <div className="BoxParent">
         <div className="fighterContainer">
           {selectHero1 === "" ? (
