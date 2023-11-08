@@ -2,11 +2,47 @@
   display: flex;
   justify-content: space-around;
   padding: 3%;
-}
 
-.healthBarFighters {
-  border: 2px solid black;
-  border-radius: 50px;
-  background-color: var(--secondary-color);
-  padding: 1%;
+  .healthBarContainer {
+    border: 2px solid black;
+    border-radius: 50px;
+
+    display: flex;
+    text-align: end;
+  }
+
+  .levelhealthBar {
+    width: 20vw;
+    height: 5vh;
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+    background-color: rgb(43, 43, 43);
+    box-shadow: 0px 0px 20px black;
+    overflow: hidden;
+    border-radius: 50px;
+    color: black;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .bar {
+    width: 0;
+    background: linear-gradient(
+      180deg,
+      rgb(251, 233, 165) 0%,
+      rgb(250, 226, 127) 32%,
+      var(--secondary-color) 100%
+    );
+  }
+
+  .textLevelHealthBar {
+    width: 5vw;
+    display: flex;
+    font-weight: bold;
+
+    p {
+      font-size: 2rem;
+    }
+  }
 }

@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
-function FightButton({ imgFighter1, imgFighter2 }) {
+function FightButton({
+  setProgressLife2,
+  setProgressLife,
+  imgFighter1,
+  imgFighter2,
+}) {
   const heroes = useRouteLoaderData("app");
   const navigate = useNavigate();
   let fighter1Stat = "";
@@ -29,19 +34,29 @@ function FightButton({ imgFighter1, imgFighter2 }) {
     }
 
     if (fighter1Stat > fighter2Stat) {
-      navigate("/winner", {
-        state: { imgFighter1, imgFighter2 },
-      });
+      setProgressLife(Math.random() * 100);
+      setProgressLife2(0);
+      setTimeout(() => {
+        navigate("/winner", {
+          state: { imgFighter1, imgFighter2 },
+        });
+      }, 3000);
     } else {
-      navigate("/loser", {
-        state: { imgFighter1, imgFighter2 },
-      });
+      setProgressLife2(Math.random() * 100);
+      setProgressLife(0);
+      setTimeout(() => {
+        navigate("/loser", {
+          state: { imgFighter1, imgFighter2 },
+        });
+      }, 3000);
     }
   };
 
   const [count, setCount] = useState(3);
   useEffect(() => {
     const countdownInterval = setInterval(() => {
+      setProgressLife(100);
+      setProgressLife2(100);
       if (count > 0) {
         setCount(count - 1);
       } else {
@@ -85,6 +100,8 @@ function FightButton({ imgFighter1, imgFighter2 }) {
 }
 
 FightButton.propTypes = {
+  setProgressLife: PropTypes.func.isRequired,
+  setProgressLife2: PropTypes.func.isRequired,
   imgFighter1: PropTypes.string.isRequired,
   imgFighter2: PropTypes.string.isRequired,
 };
