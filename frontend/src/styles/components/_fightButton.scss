@@ -38,6 +38,16 @@
     box-shadow: 3px 0px 30px black;
   }
 
+  .nameHero {
+    color: var(--hero-color);
+    font-size: 2rem;
+  }
+
+  .nameEnemy {
+    color: var(--vilain-color);
+    font-size: 2rem;
+  }
+
   .animation1 {
     animation-name: slideIn;
     animation-duration: 2s;

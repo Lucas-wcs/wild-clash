@@ -84,7 +84,7 @@ function FightButton({
             src={imgFighter1}
             alt="fighter1"
           />
-          <div>{heroName1}</div>
+          <div className="nameHero">{heroName1}</div>
         </div>
         {count === 0 ? (
           <button className="resultFight" type="button" onClick={handleFight}>
@@ -99,7 +99,7 @@ function FightButton({
             src={imgFighter2}
             alt="fighter2"
           />
-          <div>{heroName2}</div>
+          <div className="nameEnemy">{heroName2}</div>
         </div>
       </div>
     </div>
