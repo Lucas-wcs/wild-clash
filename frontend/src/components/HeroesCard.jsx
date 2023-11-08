@@ -31,7 +31,6 @@ function HeroesCard({
       <Carousel
         responsive={responsive}
         swipeable="true"
-        draggable="true"
         showDots={false}
         infinite="true"
         keyBoardControl="true"
