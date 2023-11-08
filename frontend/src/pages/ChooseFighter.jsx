@@ -51,7 +51,6 @@ function ChooseFighter() {
           ""
         )}
       </div>
-
       <HeroesCard
         selectHero1={selectHero1}
         selectHero2={selectHero2}

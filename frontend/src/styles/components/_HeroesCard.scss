@@ -1,7 +1,8 @@
-.contenerImage {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+.contenerImage .carousel-container {
+  height: 200px;
+  ul {
+    gap: 15px;
+  }
 }
 
 .sizeChooseFighter {
@@ -11,5 +12,15 @@
   &:hover {
     cursor: pointer;
     transform: scale(1.2);
+  }
+}
+
+@media (max-width: 668px) and (max-height: 376px) {
+  .contenerImage .carousel-container {
+    height: 130px;
+    ul,
+    li {
+      width: 60px;
+    }
   }
 }
