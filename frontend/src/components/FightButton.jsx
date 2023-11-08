@@ -16,6 +16,9 @@ function FightButton({
   const [heroName1, setHeroName1] = useState("");
   const [heroName2, setHeroName2] = useState("");
 
+  const [animationFight, setAnimationFight] = useState("animation1");
+  const [animationFight2, setAnimationFight2] = useState("animation2");
+
   useEffect(() => {
     const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
     const hero2 = heroes.find((hero) => hero.data.image.url === imgFighter2);
@@ -36,6 +39,8 @@ function FightButton({
     if (fighter1Stat > fighter2Stat) {
       setProgressLife(Math.random() * 100);
       setProgressLife2(0);
+      setAnimationFight("animationWinL");
+      setAnimationFight2("animationDefeatR");
       setTimeout(() => {
         navigate("/winner", {
           state: { imgFighter1, imgFighter2 },
@@ -44,6 +49,8 @@ function FightButton({
     } else {
       setProgressLife2(Math.random() * 100);
       setProgressLife(0);
+      setAnimationFight("animationDefeatL");
+      setAnimationFight2("animationWinR");
       setTimeout(() => {
         navigate("/loser", {
           state: { imgFighter1, imgFighter2 },
@@ -73,7 +80,7 @@ function FightButton({
       <div className="fightButton">
         <div>
           <img
-            className="imageFighter animation1"
+            className={`imageFighter ${animationFight}`}
             src={imgFighter1}
             alt="fighter1"
           />
@@ -88,7 +95,7 @@ function FightButton({
         )}
         <div>
           <img
-            className="imageFighter animation2"
+            className={`imageFighter ${animationFight2}`}
             src={imgFighter2}
             alt="fighter2"
           />
