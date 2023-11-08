@@ -80,3 +80,48 @@
 
   background: url("logo2_1-removebg-preview.png");
 }
+
+@media screen and (max-width: 1400px) {
+  .firstButton {
+    position: absolute;
+    left: 90%;
+    top: 15%;
+    width: 20vw;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .firstContainer {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .firstContainer img {
+    box-sizing: border-box;
+    width: 70vh;
+    height: 70vh;
+    left: 33%;
+    top: 5%;
+  }
+
+  .secondContainer {
+    position: absolute;
+    width: 30vw;
+    height: 10vh;
+    left: 25%;
+    top: 75%;
+    font-size: 30px;
+    line-height: 75px;
+  }
+
+  .firstButton {
+    position: absolute;
+    left: 100%;
+    top: 40%;
+    width: 20vw;
+    font-size: 20px;
+  }
+}
