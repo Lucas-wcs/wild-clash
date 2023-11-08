@@ -1,9 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PropTypes } from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HeroesCard from "../components/HeroesCard";
 
 function ChooseFighter() {
+  const allHeroes = useRouteLoaderData("app");
   const [selectHero1, setSelectHero1] = useState("");
   const [selectHero2, setSelectHero2] = useState("");
   const navigate = useNavigate();
@@ -12,6 +13,18 @@ function ChooseFighter() {
       state: { selectHero1, selectHero2 },
     });
   };
+  const [heroName1, setHeroName1] = useState("");
+  const [heroName2, setHeroName2] = useState("");
+  useEffect(() => {
+    const hero1 = allHeroes.find((hero) => hero.data.image.url === selectHero1);
+    const hero2 = allHeroes.find((hero) => hero.data.image.url === selectHero2);
+    if (hero1) {
+      setHeroName1(hero1.data.name);
+    }
+    if (hero2) {
+      setHeroName2(hero2.data.name);
+    }
+  }, [allHeroes, selectHero1, selectHero2]);
 
   function handleDeclick() {
     if (selectHero1) {
@@ -40,6 +53,7 @@ function ChooseFighter() {
                 src={selectHero1}
                 alt="fighter1"
               />
+              <div className="namePersoLeft">{heroName1}</div>
             </div>
           )}
           {selectHero1 !== "" ? <p className="vs">VS</p> : ""}
@@ -55,6 +69,7 @@ function ChooseFighter() {
                 src={selectHero2}
                 alt="fighter2"
               />
+              <div className="namePersoRight">{heroName2}</div>
             </div>
           )}
         </div>
