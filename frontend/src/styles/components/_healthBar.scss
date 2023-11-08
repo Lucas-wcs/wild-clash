@@ -27,13 +27,22 @@
   }
 
   .bar {
-    width: 100%;
+    width: 0;
     background: linear-gradient(
       180deg,
       rgb(251, 233, 165) 0%,
       rgb(250, 226, 127) 32%,
       var(--secondary-color) 100%
     );
-    /* possible en linear gradient*/
+  }
+
+  .textLevelHealthBar {
+    width: 5vw;
+    display: flex;
+    font-weight: bold;
+
+    p {
+      font-size: 2rem;
+    }
   }
 }

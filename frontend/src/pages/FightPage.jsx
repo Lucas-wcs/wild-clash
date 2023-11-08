@@ -8,7 +8,8 @@ function FightPage() {
   const imgFighter1 = location.state.selectHero1;
   const imgFighter2 = location.state.selectHero2;
 
-  const [progressLife, setProgressLife] = useState(100);
+  const [progressLife, setProgressLife] = useState(0);
+  const [progressLife2, setProgressLife2] = useState(0);
 
   return (
     <div className="fightPage">
@@ -23,10 +24,11 @@ function FightPage() {
         imgFighter1={imgFighter1}
         imgFighter2={imgFighter2}
         value={progressLife}
+        value2={progressLife2}
       />
       <FightButton
-        progressLife={progressLife}
         setProgressLife={setProgressLife}
+        setProgressLife2={setProgressLife2}
         imgFighter1={imgFighter1}
         imgFighter2={imgFighter2}
       />
