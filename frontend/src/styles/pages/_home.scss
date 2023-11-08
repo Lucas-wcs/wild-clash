@@ -9,6 +9,7 @@
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -38,5 +39,15 @@
 }
 
 .homelogo {
-  width: 60%;
+  width: 80%;
+}
+
+.homeButtons {
+  width: 100vw;
+  height: 20vw;
+  position: absolute;
+  bottom: 12px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
