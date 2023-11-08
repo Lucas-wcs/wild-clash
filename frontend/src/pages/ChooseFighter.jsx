@@ -13,6 +13,18 @@ function ChooseFighter() {
     });
   };
 
+  function handleDeclick() {
+    if (selectHero1) {
+      setSelectHero1("");
+    }
+  }
+
+  function handleDeclickBox() {
+    if (selectHero2) {
+      setSelectHero2("");
+    }
+  }
+
   return (
     <div className="ChooseFighter">
       <div className="BoxParent">
@@ -23,6 +35,8 @@ function ChooseFighter() {
             <div className="displayHeroesSelected">
               <img
                 className="selectHero1 boxSelected"
+                onClick={handleDeclick}
+                role="presentation"
                 src={selectHero1}
                 alt="fighter1"
               />
@@ -36,6 +50,8 @@ function ChooseFighter() {
             <div>
               <img
                 className="selectHero2 boxSelected"
+                onClick={handleDeclickBox}
+                role="presentation"
                 src={selectHero2}
                 alt="fighter2"
               />
@@ -51,7 +67,6 @@ function ChooseFighter() {
           ""
         )}
       </div>
-
       <HeroesCard
         selectHero1={selectHero1}
         selectHero2={selectHero2}
