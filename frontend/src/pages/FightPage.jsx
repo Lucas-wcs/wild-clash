@@ -16,7 +16,7 @@ function FightPage() {
       <div className="logoBox">
         <img
           className="logoFight"
-          src="/public/images/logo_projet2.png"
+          src="/images/logo_projet2.png"
           alt="Logo Clash Heroes"
         />
       </div>
