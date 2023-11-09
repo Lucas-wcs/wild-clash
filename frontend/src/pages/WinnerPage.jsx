@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import useWindowSize from "react-use/lib/useWindowSize";
+import { useRef, useEffect } from "react";
 import Confetti from "react-confetti";
 
 function WinnerPage() {
@@ -12,7 +13,14 @@ function WinnerPage() {
   };
 
   const { width, height } = useWindowSize();
+  const audio = useRef(null);
 
+  useEffect(() => {
+    audio.current.muted = false;
+    audio.current.play();
+  }, [audio]);
+
+  // const button = useRef(null);
   return (
     <div className="firstContainer">
       <Confetti width={width} height={height} />
@@ -26,6 +34,10 @@ function WinnerPage() {
         </div>
       </div>
       <div className="logo" />
+      <audio ref={audio} muted>
+        <track kind="captions" />
+        <source src="/sons/applausSound.mp3" type="audio/mp3" />
+      </audio>
     </div>
   );
 }
