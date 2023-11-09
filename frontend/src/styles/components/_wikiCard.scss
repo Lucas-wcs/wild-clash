@@ -1,12 +1,18 @@
 .wikiCard {
   width: 100%;
-  padding: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-content: flex-start;
   gap: 10px;
-  background: linear-gradient(180deg, #001c3d 0%, rgba(59, 0, 0, 0.49) 100%);
+  background: linear-gradient(
+    0.5turn,
+    var(--hero-color),
+    black,
+    var(--vilain-color)
+  );
 
   .wikiCard-top {
     padding-left: 2%;
@@ -55,7 +61,8 @@
 
 @media screen and (max-width: 900px) {
   .wikiCard {
-    padding: 16px;
+    padding-left: 8px;
+    padding-left: 8px;
     gap: 8px;
 
     h6 {
