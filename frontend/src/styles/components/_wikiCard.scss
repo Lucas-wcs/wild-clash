@@ -1,103 +1,100 @@
 .wikiCard {
+  width: 100%;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-content: flex-start;
-  gap: 15px;
-  width: 25%;
+  gap: 10px;
   background: linear-gradient(180deg, #001c3d 0%, rgba(59, 0, 0, 0.49) 100%);
-  padding: 20px;
-}
 
-.wikiCard-top {
-  padding-left: 2%;
-}
+  .wikiCard-top {
+    padding-left: 2%;
+  }
 
-.wikiCard-bottom,
-.wikiCard-top {
-  height: 100%;
-  background-color: white;
-}
+  .wikiCard-bottom,
+  .wikiCard-top {
+    height: 100%;
+    background-color: white;
+  }
 
-p {
-  font-size: 0.8rem;
-  margin-left: 10px;
-  margin-bottom: 5px;
-}
+  p {
+    font-size: 0.8rem;
+    margin-left: 10%;
+    margin-bottom: 5%;
+  }
 
-h6 {
-  font-size: 1rem;
-  text-align: center;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  text-transform: uppercase;
-}
+  h6 {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    text-transform: uppercase;
+  }
 
-h5 {
-  text-decoration: underline;
-  text-transform: uppercase;
-}
+  h5 {
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
 
-label,
-meter {
-  font-size: 0.8rem;
-  display: block;
-}
+  label,
+  meter,
+  p {
+    font-size: 0.8rem;
+    display: block;
+  }
 
-.wikiCard-bottom-bis {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  .wikiCard-bottom-bis {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 // responsive :
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .wikiCard {
-    width: 40%;
-  }
-  h6 {
-    font-size: 1rem;
-  }
+    padding: 16px;
+    gap: 8px;
 
-  h5 {
-    font-size: 0.8rem;
-  }
+    h6 {
+      font-size: 1rem;
+    }
 
-  label,
-  meter,
-  p {
-    font-size: 0.6rem;
+    h5 {
+      font-size: 0.8rem;
+    }
+
+    label,
+    meter,
+    p {
+      font-size: 0.7rem;
+    }
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .wikiCard {
-    width: 40%;
-  }
+    h6 {
+      font-size: 0.8rem;
+    }
 
-  h6 {
-    font-size: 1rem;
-  }
+    h5 {
+      font-size: 0.7rem;
+    }
 
-  h5 {
-    font-size: 0.8rem;
-  }
-
-  label,
-  meter,
-  p {
-    font-size: 0.6rem;
+    label,
+    meter,
+    p {
+      font-size: 0.6rem;
+    }
   }
 }
 
 @media screen and (max-width: 450px) {
-  .wikiCard {
-    width: 50%;
-  }
-
   h6 {
-    font-size: 1rem;
+    font-size: 2px;
   }
 
   h5 {

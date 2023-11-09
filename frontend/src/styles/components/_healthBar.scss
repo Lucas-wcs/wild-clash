@@ -2,13 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  // padding: 3%;
 
   .namePlayers {
     display: flex;
     justify-content: space-around;
     color: black;
-    font-size: 4vw;
+    font-size: 3vw;
   }
 
   .healthBar2players {
@@ -18,10 +17,6 @@
 
   .healthBarContainer {
     border-radius: 50px;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: center;
-    // // text-align: end;
   }
 
   .healthBar1Player {
@@ -34,7 +29,6 @@
     height: 6vh;
     border: 2px solid black;
     display: flex;
-    // justify-content: start;
     align-items: stretch;
     background-color: rgb(43, 43, 43);
     box-shadow: 0px 0px 20px black;
@@ -57,12 +51,14 @@
   }
 
   .textLevelHealthBar {
-    // width: 5vw;
     display: flex;
     font-weight: bold;
 
     p {
-      font-size: 3vw;
+      font-size: 2vw;
+    }
+    .lastP {
+      padding-right: 3vw;
     }
   }
 }
