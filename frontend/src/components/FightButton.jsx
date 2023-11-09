@@ -13,20 +13,8 @@ function FightButton({
   let fighter1Stat = "";
   let fighter2Stat = "";
 
-  const [heroName1, setHeroName1] = useState("");
-  const [heroName2, setHeroName2] = useState("");
-
   const [animationFight, setAnimationFight] = useState("animation1");
   const [animationFight2, setAnimationFight2] = useState("animation2");
-
-  useEffect(() => {
-    const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
-    const hero2 = heroes.find((hero) => hero.data.image.url === imgFighter2);
-    if (hero1 && hero2) {
-      setHeroName1(hero1.data.name);
-      setHeroName2(hero2.data.name);
-    }
-  }, [heroes, imgFighter1, imgFighter2]);
 
   const handleFight = () => {
     const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
@@ -84,7 +72,6 @@ function FightButton({
             src={imgFighter1}
             alt="fighter1"
           />
-          <div className="nameHero">{heroName1}</div>
         </div>
         {count === 0 ? (
           <button className="resultFight" type="button" onClick={handleFight}>
@@ -99,7 +86,6 @@ function FightButton({
             src={imgFighter2}
             alt="fighter2"
           />
-          <div className="nameEnemy">{heroName2}</div>
         </div>
       </div>
     </div>
