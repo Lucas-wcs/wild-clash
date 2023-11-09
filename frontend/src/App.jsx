@@ -8,11 +8,16 @@ function App() {
   const orientation = useScreenOrientation();
 
   return (
-    <div>
+    <div className="app">
       {orientation === "portrait-primary" ? (
         <div className="orientationPortrait">
-          Pour une meilleure expérience avec le jeu CLASH HEROES, merci de
-          tourner votre appareil.
+          <img
+            className="logoClash"
+            src="../images/homeLogo.png"
+            alt="logo Clash Heroes"
+          />
+          <div className="arrowRound" />
+          <p>Afin de mieux profiter du jeu, merci de tourner votre appareil.</p>
         </div>
       ) : (
         <div className="body">
