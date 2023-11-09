@@ -44,7 +44,9 @@ function ChooseFighter() {
       <div className="BoxParent">
         <div className="fighterContainer">
           {selectHero1 === "" ? (
-            ""
+            <div className="boxSelected">
+              <div className="inlineDiv" />
+            </div>
           ) : (
             <div className="displayHeroesSelected">
               <img
@@ -57,10 +59,12 @@ function ChooseFighter() {
               <div className="namePersoLeft">{heroName1}</div>
             </div>
           )}
-          {selectHero1 !== "" ? <p className="vs">VS</p> : ""}
+          <p className="vs">VS</p>
 
           {selectHero2 === "" ? (
-            ""
+            <div className="boxSelected">
+              <div className="inlineDiv" />
+            </div>
           ) : (
             <div>
               <img
