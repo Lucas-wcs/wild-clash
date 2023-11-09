@@ -25,11 +25,7 @@ function WinnerPage() {
           </button>
         </div>
       </div>
-      <div className="logo">
-        {/* <a href="#"> */}
-        {/* <img src="../public/images/logo2_1-removebg-preview 3.png" alt="BoutonHome" /> */}
-        {/* </a> */}
-      </div>
+      <div className="logo" />
     </div>
   );
 }
