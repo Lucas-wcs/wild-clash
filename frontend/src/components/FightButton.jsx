@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
@@ -12,6 +12,9 @@ function FightButton({
   const navigate = useNavigate();
   let fighter1Stat = "";
   let fighter2Stat = "";
+  const audio = useRef(null);
+  const audio2 = useRef(null);
+  const button = useRef(null);
 
   const [animationFight, setAnimationFight] = useState("animation1");
   const [animationFight2, setAnimationFight2] = useState("animation2");
@@ -30,20 +33,28 @@ function FightButton({
       setAnimationFight("animationWinL");
       setAnimationFight2("animationDefeatR");
       setTimeout(() => {
+        audio.current.muted = false;
+        audio.current.play();
+      }, 3000);
+      setTimeout(() => {
         navigate("/winner", {
           state: { imgFighter1, imgFighter2 },
         });
-      }, 3000);
+      }, 6000);
     } else {
       setProgressLife2(Math.random() * 100);
       setProgressLife(0);
       setAnimationFight("animationDefeatL");
       setAnimationFight2("animationWinR");
       setTimeout(() => {
+        audio2.current.muted = false;
+        audio2.current.play();
+      }, 3000);
+      setTimeout(() => {
         navigate("/loser", {
           state: { imgFighter1, imgFighter2 },
         });
-      }, 3000);
+      }, 6000);
     }
   };
 
@@ -74,7 +85,12 @@ function FightButton({
           />
         </div>
         {count === 0 ? (
-          <button className="resultFight" type="button" onClick={handleFight}>
+          <button
+            className="resultFight"
+            type="button"
+            onClick={handleFight}
+            ref={button}
+          >
             Fight !
           </button>
         ) : (
@@ -88,6 +104,14 @@ function FightButton({
           />
         </div>
       </div>
+      <audio ref={audio} muted>
+        <track kind="captions" />
+        <source src="/sons/applausSound.mp3" type="audio/mp3" />
+      </audio>
+      <audio ref={audio2} muted>
+        <track kind="captions" />
+        <source src="/sons/ouh.mp3" type="audio/mp3" />
+      </audio>
     </div>
   );
 }

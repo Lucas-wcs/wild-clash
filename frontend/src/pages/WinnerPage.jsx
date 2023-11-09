@@ -1,4 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import useWindowSize from "react-use/lib/useWindowSize";
+import Confetti from "react-confetti";
 
 function WinnerPage() {
   const location = useLocation();
@@ -9,8 +11,11 @@ function WinnerPage() {
     navigate("/chooseFighter");
   };
 
+  const { width, height } = useWindowSize();
+
   return (
     <div className="firstContainer">
+      <Confetti width={width} height={height} />
       <div>
         <img src={urlImgFighter1} alt="winner" />
         <div className="secondContainer">
@@ -20,11 +25,7 @@ function WinnerPage() {
           </button>
         </div>
       </div>
-      <div className="logo">
-        {/* <a href="#"> */}
-        {/* <img src="../public/images/logo2_1-removebg-preview 3.png" alt="BoutonHome" /> */}
-        {/* </a> */}
-      </div>
+      <div className="logo" />
     </div>
   );
 }

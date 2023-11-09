@@ -11,9 +11,10 @@ function WikiCard({
   power,
   speed,
   combat,
+  handleFlip,
 }) {
   return (
-    <div className="wikiCard">
+    <div className="wikiCard" onClick={handleFlip} role="presentation">
       <div className="wikiCard-top">
         <h6>{name}</h6>
         <h5>Full name :</h5>
@@ -119,6 +120,7 @@ WikiCard.propTypes = {
   power: PropTypes.number.isRequired,
   speed: PropTypes.number.isRequired,
   combat: PropTypes.number.isRequired,
+  handleFlip: PropTypes.string.isRequired,
 };
 
 export default WikiCard;

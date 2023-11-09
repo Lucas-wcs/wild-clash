@@ -38,6 +38,7 @@ function Home() {
         src="public/images/homeLogo.png"
         alt="homeLogo"
       />
+      <img className="homelogo" src="/images/homeLogo.png" alt="homeLogo" />
       <div className="homeButtons">
         <LaunchButton />
         <WikiButton className="wikiButton" />

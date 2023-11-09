@@ -72,7 +72,7 @@ function HealthBar({ value, value2, imgFighter1, imgFighter2 }) {
         <div className="healthBar1Player">
           <div className="textLevelHealthBar">
             <p ref={progressTextRef2}>0</p>
-            <p>pv</p>
+            <p className="lastP">pv</p>
           </div>
           <div className="healthBarContainer">
             <div className="levelhealthBar">
