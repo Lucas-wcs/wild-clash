@@ -6,7 +6,7 @@ function HomeButton() {
     <div>
       <NavLink className="homebutton" to="/">
         <div className="shadow">
-          <img src="/public/images/LogoHomeButton.png" alt="Home" />
+          <img src="/images/LogoHomeButton.png" alt="Home" />
         </div>
       </NavLink>
     </div>
