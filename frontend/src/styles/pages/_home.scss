@@ -1,10 +1,17 @@
 .home {
   width: 100vw;
   height: 100vh;
-  position: relative;
+  overflow: hidden;
   opacity: 1;
   -webkit-animation: flash 2s;
   animation: flash 2s;
+  background-image: url("../../../public/images/homePage.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   @keyframes flash {
     0% {
@@ -29,28 +36,18 @@
       opacity: 1;
     }
   }
+}
 
-  .background {
-    z-index: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  .homelogo {
-    z-index: 1;
-    position: absolute;
-    width: 60%;
-    bottom: 33%;
-    left: 50%;
-    transform: translate(-50%);
-  }
-  .wiki {
-    z-index: 1;
-    position: absolute;
-    width: 75px;
-    height: 56.25px;
-    bottom: 7%;
-    right: 4%;
-  }
+.homelogo {
+  width: 80%;
+}
+
+.homeButtons {
+  width: 100vw;
+  height: 20vw;
+  position: absolute;
+  bottom: 12px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }

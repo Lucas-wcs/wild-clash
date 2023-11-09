@@ -1,0 +1,44 @@
+.app {
+  .orientationPortrait {
+    background: url("../images/homePage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+  }
+
+  p {
+    font-size: 8vw;
+    padding: 5%;
+  }
+  .logoClash {
+    width: 90%;
+  }
+
+  .arrowRound {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 25px solid white;
+    border-radius: 50%;
+    border-right-color: transparent;
+
+    &::after {
+      content: "";
+      position: absolute;
+      border: 50px solid #ffffff;
+      top: -25px;
+      border-bottom-color: white;
+      border-top-width: 0;
+      border-right-width: 0;
+      border-left-color: transparent;
+    }
+  }
+}
