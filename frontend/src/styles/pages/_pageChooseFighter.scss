@@ -44,6 +44,11 @@
     background: none;
   }
 
+  .greyPerso {
+    opacity: 50%;
+    pointer-events: none;
+  }
+
   .boxSelected {
     width: 240px;
   }
