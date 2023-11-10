@@ -1,14 +1,16 @@
 .homebutton {
   z-index: 5;
-  width: 70px;
+  width: 6.5vw;
   display: block;
   position: absolute;
-  right: 12px;
   top: 12px;
+  right: 12px;
   z-index: 5;
 
   .shadow img {
     transition: 0.5s ease;
+    height: 100%;
+    width: 100%;
   }
 
   .shadow img:hover {
@@ -22,10 +24,5 @@
     -webkit-transform: translateX(-3px);
     transform: translateX(-3px);
     transition: 0.5s ease;
-  }
-
-  img {
-    height: 100%;
-    width: 100%;
   }
 }

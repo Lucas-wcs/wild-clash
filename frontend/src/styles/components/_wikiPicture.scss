@@ -1,0 +1,23 @@
+.wikiPicture {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: linear-gradient(
+    0.5turn,
+    var(--hero-color),
+    var(--vilain-color)
+  );
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 5px solid rgba(255, 0, 0, 0.3);
+    background: linear-gradient(var(--hero-color), var(--vilain-color))
+      border-box;
+  }
+}
