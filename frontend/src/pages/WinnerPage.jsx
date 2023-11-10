@@ -16,15 +16,18 @@ function WinnerPage() {
   return (
     <div className="firstContainer">
       <Confetti width={width} height={height} />
-      <div>
+
+      <div className="img-winner">
         <img src={urlImgFighter1} alt="winner" />
-        <div className="secondContainer">
-          <p className="firstText">You Win !</p>
-          <button type="button" className="firstButton" onClick={handleNewGame}>
-            New Game
-          </button>
-        </div>
       </div>
+
+      <div className="secondContainer">
+        <p className="firstText">You Win !</p>
+        <button type="button" className="firstButton" onClick={handleNewGame}>
+          New Game
+        </button>
+      </div>
+
       <div className="logo" />
     </div>
   );

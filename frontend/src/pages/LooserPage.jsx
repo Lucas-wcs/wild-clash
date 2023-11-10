@@ -1,7 +1,6 @@
-import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-function LooserPage() {
+function WinnerPage() {
   const location = useLocation();
   const urlImgFighter1 = location.state.imgFighter1;
   const navigate = useNavigate();
@@ -12,18 +11,15 @@ function LooserPage() {
 
   return (
     <div className="firstContainer2">
-      <div>
-        <img src={urlImgFighter1} alt="Fighter1" />
-        <div className="secondContainer2">
-          <p className="firstText2">You Lose !</p>
-          <button
-            type="button"
-            className="firstButton2"
-            onClick={handleNewGame}
-          >
-            New Game
-          </button>
-        </div>
+      <div className="img-winner2">
+        <img src={urlImgFighter1} alt="loser" />
+      </div>
+
+      <div className="secondContainer2">
+        <p className="firstText2">You Lose !</p>
+        <button type="button" className="firstButton2" onClick={handleNewGame}>
+          New Game
+        </button>
       </div>
 
       <div className="logo" />
@@ -31,4 +27,4 @@ function LooserPage() {
   );
 }
 
-export default LooserPage;
+export default WinnerPage;
