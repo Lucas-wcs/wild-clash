@@ -38,13 +38,25 @@ function ChooseFighter() {
     }
   }
 
+  function changeTitle() {
+    if (selectHero1 === "") {
+      return "Choose Your Hero";
+    }
+    if (selectHero1 && selectHero2 !== "") {
+      return "Ready For The Fight";
+    }
+    return "Choose Your Enemy";
+  }
+
   return (
     <div className="ChooseFighter">
-      <h1 className="titlePage">Choose Your Hero</h1>
+      <h1 className="titlePage">{changeTitle()}</h1>
       <div className="BoxParent">
         <div className="fighterContainer">
           {selectHero1 === "" ? (
-            ""
+            <div className="boxSelected">
+              <div className="inlineDiv" />
+            </div>
           ) : (
             <div className="displayHeroesSelected">
               <img
@@ -57,10 +69,12 @@ function ChooseFighter() {
               <div className="namePersoLeft">{heroName1}</div>
             </div>
           )}
-          {selectHero1 !== "" ? <p className="vs">VS</p> : ""}
+          <p className="vs">VS</p>
 
           {selectHero2 === "" ? (
-            ""
+            <div className="boxSelected">
+              <div className="inlineDiv" />
+            </div>
           ) : (
             <div>
               <img

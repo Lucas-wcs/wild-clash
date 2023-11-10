@@ -38,6 +38,10 @@
   color: rgba(8, 0, 255, 1);
 }
 
+.firstText {
+  font-size: 4vw;
+}
+
 .firstButton {
   position: absolute;
   left: 60%;
@@ -74,7 +78,7 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .firstContainer {
     position: absolute;
     width: 100vw;
@@ -86,7 +90,7 @@
     box-sizing: border-box;
     width: 70vh;
     height: 70vh;
-    left: 33%;
+    left: 35%;
     top: 5%;
   }
 

@@ -5,7 +5,7 @@
   opacity: 1;
   -webkit-animation: flash 2s;
   animation: flash 2s;
-  background-image: url("../../../public/images/homePage.png");
+  background-image: url("../../../images/homePage.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -51,4 +51,80 @@
   display: flex;
   justify-content: end;
   align-items: center;
+}
+
+.curtain-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: transparent;
+}
+
+.curtain {
+  // position: absolute;
+  // display: flex;
+  // z-index: 2;
+  // height: 100vh;
+  // width: 100vw;
+}
+
+.curtain-panel-left {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  background-image: url("images/Battles_Iron_Man_hero_500524_1.jpg");
+  background-size: cover;
+  background-position: right;
+
+  .button-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .logo-1 {
+      all: unset;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+.curtain-panel-right {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  background-image: url("/images/Battles_Iron_Man_hero_500524_2.jpg");
+  background-size: cover;
+
+  .logo-2 {
+    all: unset;
+  }
+}
+
+.openAnimationL {
+  animation: openCurtainL 1s forwards ease-in-out;
+}
+@keyframes openCurtainL {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}
+.openAnimationR {
+  animation: opencurtainR 1s forwards ease-in-out;
+}
+@keyframes opencurtainR {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(150%);
+  }
 }
