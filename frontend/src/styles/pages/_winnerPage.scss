@@ -1,5 +1,4 @@
 .firstContainer {
-  position: absolute;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
@@ -7,54 +6,47 @@
     rgba(2, 0, 36, 1) 0%,
     rgba(8, 0, 255, 1) 100%
   );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .firstContainer img {
   box-sizing: border-box;
-
-  position: absolute;
   width: 60vh;
   height: 75vh;
-  left: 33%;
-  top: 5%;
-
   background: url("captainamerica.png");
   border: 3px solid #0075ff;
   border-radius: 20px;
 }
 
 .secondContainer {
-  position: absolute;
-  width: 55vw;
+  width: 100vw;
   height: 10vh;
-  left: 22%;
-  top: 85%;
-
   font-style: normal;
   font-weight: 400;
-  font-size: 75px;
+  font-size: 5vw;
   line-height: 75px;
-
   color: rgba(8, 0, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
 }
 
 .firstText {
-  font-size: 4vw;
+  font-size: 3vw;
 }
 
 .firstButton {
-  position: absolute;
-  left: 60%;
-  top: 15%;
   width: 20vw;
   font-size: 30px;
-
   font-style: normal;
-
   padding: 10px;
   border-radius: 30px;
   border: 2px solid rgb(247, 222, 89);
-
   cursor: pointer;
   transition:
     background-color 300ms,
@@ -68,47 +60,34 @@
   color: black;
 }
 
-@media screen and (max-width: 1400px) {
-  .firstButton {
-    position: absolute;
-    left: 90%;
-    top: 15%;
-    width: 20vw;
-    font-size: 30px;
-  }
-}
-
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 960px) {
   .firstContainer {
-    position: absolute;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    gap: 10px;
   }
 
   .firstContainer img {
     box-sizing: border-box;
     width: 70vh;
     height: 70vh;
-    left: 35%;
-    top: 5%;
   }
 
   .secondContainer {
-    position: absolute;
-    width: 30vw;
+    width: 100vw;
     height: 10vh;
-    left: 25%;
-    top: 75%;
     font-size: 30px;
     line-height: 75px;
   }
 
   .firstButton {
-    position: absolute;
-    left: 100%;
     top: 40%;
-    width: 20vw;
+    width: 30vw;
     font-size: 20px;
+  }
+
+  .firstText {
+    font-size: 30px;
   }
 }
