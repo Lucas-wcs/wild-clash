@@ -73,6 +73,7 @@
       all: unset;
       position: absolute;
       right: 0;
+      top: 33%;
       .logoButtonL {
         width: 100%;
       }
@@ -93,6 +94,7 @@
       all: unset;
       position: absolute;
       left: 0;
+      top: 33%;
       .storm {
         position: absolute;
       }
@@ -100,6 +102,14 @@
         width: 100%;
       }
     }
+  }
+
+  .logo-1:hover {
+    cursor: pointer;
+  }
+
+  .logo-2:hover {
+    cursor: pointer;
   }
 
   .openAnimationL {
@@ -124,5 +134,14 @@
     100% {
       transform: translateX(150%);
     }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .logo-1 {
+    all: unset;
+    position: absolute;
+    right: 0;
+    top: 33%;
   }
 }
