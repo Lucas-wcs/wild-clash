@@ -12,12 +12,13 @@
     justify-content: space-around;
     align-items: center;
     padding: 5%;
+
+    p {
+      font-size: 8vw;
+      padding: 5%;
+    }
   }
 
-  p {
-    font-size: 8vw;
-    padding: 5%;
-  }
   .logoClash {
     width: 90%;
   }
