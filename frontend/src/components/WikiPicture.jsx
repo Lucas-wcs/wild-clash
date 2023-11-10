@@ -11,7 +11,7 @@ function WikiPicture({ url1, name1, handleFlip }) {
 WikiPicture.propTypes = {
   url1: PropTypes.string.isRequired,
   name1: PropTypes.string.isRequired,
-  handleFlip: PropTypes.string.isRequired,
+  handleFlip: PropTypes.func.isRequired,
 };
 
 export default WikiPicture;
