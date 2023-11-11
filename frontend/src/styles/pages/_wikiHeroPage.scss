@@ -9,11 +9,30 @@
     rgba(94, 94, 114, 0) 50%,
     rgba(0, 0, 3, 1) 100%
   );
-
+  min-height: 100vh;
+}
+.displayHeroes {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
   width: 100vw;
   padding: 5%;
+}
+
+.wikiFilters {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  padding: 2%;
+
+  input {
+    border-radius: 15px;
+    height: 30px;
+  }
+
+  img:hover {
+    cursor: pointer;
+  }
 }
