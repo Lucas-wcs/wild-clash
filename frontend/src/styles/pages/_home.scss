@@ -44,8 +44,9 @@
     }
   }
   .homelogo {
-    width: 60%;
-    transform: translateY(-30%);
+    position: absolute;
+    width: 45%;
+    top: 3%;
   }
 
   .homeButtons {
