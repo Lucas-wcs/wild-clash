@@ -31,9 +31,23 @@ function WinnerPage() {
 
       <div className="secondContainer">
         <p className="firstText">You Win !</p>
-        <button type="button" className="firstButton" onClick={handleNewGame}>
+        <div
+          className="firstButton"
+          onClick={handleNewGame}
+          role="presentation"
+        >
+          <button type="button" className="btn">
+            <span />
+            <p
+              data-start="good luck!"
+              data-text="start!"
+              data-title="new game"
+            />
+          </button>
+        </div>
+        {/* <button type="button" className="firstButton" onClick={handleNewGame}>
           New Game
-        </button>
+        </button> */}
       </div>
 
       <div className="logo" />
