@@ -1,12 +1,15 @@
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PropTypes } from "prop-types";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import HeroesCard from "../components/HeroesCard";
+import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function ChooseFighter() {
+  const { selectHero1, setSelectHero1 } = useContext(HeroLoaderContext);
+  const { selectHero2, setSelectHero2 } = useContext(HeroLoaderContext);
   const allHeroes = useRouteLoaderData("app");
-  const [selectHero1, setSelectHero1] = useState("");
-  const [selectHero2, setSelectHero2] = useState("");
+  // const [selectHero1, setSelectHero1] = useState("");
+  // const [selectHero2, setSelectHero2] = useState("");
   const navigate = useNavigate();
   const handlePage = () => {
     navigate("/fight", {
