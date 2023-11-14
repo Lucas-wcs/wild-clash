@@ -64,10 +64,8 @@ function Home() {
           src="public/images/homeLogo.png"
           alt="homeLogo"
         />
-        <div className="homeButtons">
-          <LaunchButton />
-          <WikiButton className="wikiButton" />
-        </div>
+        <LaunchButton className="launchbutton" />
+        <WikiButton className="wikiButton" />
       </div>
     </div>
   );

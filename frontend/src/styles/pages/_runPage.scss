@@ -1,0 +1,15 @@
+.run {
+  background-image: url("./public/images/RunPage.png");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  position: absolute;
+}
+
+.run .runtitle {
+  margin-top: 5%;
+  background-color: rgb(247, 222, 89);
+  padding: 2%;
+  position: absolute;
+  align-items: center;
+}
