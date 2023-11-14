@@ -1,38 +1,43 @@
 .wikiHero {
-  // background-image: url("../../../images/Wiki_Heroes.png");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 3, 1) 0%,
-    rgba(94, 94, 114, 0) 50%,
-    rgba(0, 0, 3, 1) 100%
-  );
-  min-height: 100vh;
-}
-.displayHeroes {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  width: 100vw;
-  padding: 5%;
-}
+  background-image: url("../../../images/Wiki_Heroes.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  // background: rgb(2, 0, 36);
+  // background: linear-gradient(
+  //   to right,
+  //   rgba(0, 0, 3, 1) 0%,
+  //   rgba(94, 94, 114, 0) 50%,
+  //   rgba(0, 0, 3, 1) 100%
+  // );
 
-.wikiFilters {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100vw;
-  padding: 2%;
-
-  input {
-    border-radius: 15px;
-    height: 30px;
+  .displayHeroes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 100vw; // no scroll left-right
+    padding: 5%;
   }
 
-  img:hover {
-    cursor: pointer;
+  .wikiFilters {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    padding: 2%;
+
+    input {
+      border-radius: 15px;
+      height: 30px;
+    }
+
+    img {
+      height: 10vh;
+    }
+    img:hover {
+      cursor: pointer;
+    }
   }
 }
