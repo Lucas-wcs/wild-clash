@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import { useState, useEffect, useRef } from "react";
 import { useRouteLoaderData } from "react-router-dom";
 
-function HealthBar({ value, value2, imgFighter1, imgFighter2 }) {
+function HealthBar({ value, value2, selectHero1, selectHero2 }) {
   const progressTextRef = useRef(null);
   const progressTextRef2 = useRef(null);
 
@@ -11,13 +11,13 @@ function HealthBar({ value, value2, imgFighter1, imgFighter2 }) {
   const [heroName1, setHeroName1] = useState("");
   const [heroName2, setHeroName2] = useState("");
   useEffect(() => {
-    const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
-    const hero2 = heroes.find((hero) => hero.data.image.url === imgFighter2);
+    const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
+    const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
     if (hero1 && hero2) {
       setHeroName1(hero1.data.name);
       setHeroName2(hero2.data.name);
     }
-  }, [heroes, imgFighter1, imgFighter2]);
+  }, [heroes, selectHero1, selectHero2]);
 
   useEffect(() => {
     if (progressTextRef.current != null) {
@@ -96,8 +96,8 @@ function HealthBar({ value, value2, imgFighter1, imgFighter2 }) {
 HealthBar.propTypes = {
   value: PropTypes.number.isRequired,
   value2: PropTypes.number.isRequired,
-  imgFighter1: PropTypes.string.isRequired,
-  imgFighter2: PropTypes.string.isRequired,
+  selectHero1: PropTypes.string.isRequired,
+  selectHero2: PropTypes.string.isRequired,
 };
 
 export default HealthBar;
