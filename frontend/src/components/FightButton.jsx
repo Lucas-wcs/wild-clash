@@ -13,8 +13,8 @@ function FightButton({
   let fighter1Stat = "";
   let fighter2Stat = "";
 
-  const [animationFight, setAnimationFight] = useState("animationRun");
-  const [animationFight2, setAnimationFight2] = useState("");
+  const [animationFight, setAnimationFight] = useState("animation1");
+  const [animationFight2, setAnimationFight2] = useState("animation2");
 
   const handleFight = () => {
     const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
