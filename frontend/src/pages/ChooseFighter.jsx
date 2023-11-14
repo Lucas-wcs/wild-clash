@@ -76,7 +76,7 @@ function ChooseFighter() {
               <div className="inlineDiv" />
             </div>
           ) : (
-            <div>
+            <div className="displayHeroesSelected">
               <img
                 className="selectHero2 boxSelected"
                 onClick={handleDeclickBox}

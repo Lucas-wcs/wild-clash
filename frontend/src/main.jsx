@@ -10,6 +10,8 @@ import ChooseFighter from "./pages/ChooseFighter";
 import FightPage from "./pages/FightPage";
 import WinnerPage from "./pages/WinnerPage";
 import LooserPage from "./pages/LooserPage";
+import RunPage from "./pages/RunPage";
+import BombPage from "./pages/BombPage";
 
 const loadDatas = async () => {
   const endpoints = [
@@ -74,6 +76,14 @@ const router = createBrowserRouter([
       {
         path: "loser",
         element: <LooserPage />,
+      },
+      {
+        path: "bombpage",
+        element: <BombPage />,
+      },
+      {
+        path: "runpage",
+        element: <RunPage />,
       },
     ],
   },
