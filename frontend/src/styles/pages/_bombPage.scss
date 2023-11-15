@@ -1,7 +1,8 @@
 .BombPage {
   min-height: 100vh;
   overflow: hidden;
-  background-image: url("./public/images/bombpage.jpg");
+  background-image: url("./public/images/runbackground.png");
+  background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
   flex-direction: column;
@@ -12,19 +13,7 @@
     text-align: center;
     height: 50%;
   }
-  p {
-    font-size: 70px;
-    color: white;
-    color: #ffffff;
-    text-align: center;
-    margin-right: 50%;
-    margin-top: 20%;
-    // transform: translate(-50%, -50%);
-    color: #daf6ff;
-    text-shadow:
-      0 0 20px rgba(10, 175, 230, 1),
-      0 0 20px rgba(10, 175, 230, 0);
-  }
+
   .largeBox {
     height: 90vh;
     width: 100vw;
@@ -60,10 +49,10 @@
   .ContainerImageBomb {
     background-repeat: no-repeat;
     background-size: contain;
-    top: 5%;
-    height: 40vh;
+    background-image: url("./public/images/runbomb.png");
+    top: 10%;
+    height: 30vh;
     width: 30vw;
-    left: 42%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,84 +60,26 @@
     position: absolute;
     margin-bottom: 30%;
     overflow: hidden;
+
+    p {
+      color: aliceblue;
+      font-size: 100px;
+    }
   }
 
   .ButtonBombFight {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 70%;
-    width: 20%;
+    top: 70vh;
+    width: 30vw;
     height: 40px;
+    padding: 10px;
     border-radius: 50px;
     color: white;
     font-size: 20px;
     background-color: black;
     border-radius: white;
     cursor: pointer;
-  }
-  .animationRun {
-    animation-name: run1;
-    animation-duration: 2.5s;
-    animation-iteration-count: infinite;
-  }
-
-  @keyframes run1 {
-    0% {
-      transform: translate(0px, 0px);
-    }
-    15% {
-      transform: rotate(10deg) translate(5vw, -5vw);
-    }
-    25% {
-      transform: translate(10vw, 0);
-    }
-    40% {
-      transform: rotate(10deg) translate(15vw, -5vw);
-    }
-    50% {
-      transform: translate(20vw, 0);
-    }
-    65% {
-      transform: rotate(10deg) translate(25vw, -10vw);
-    }
-    75% {
-      transform: translate(30vw, 0);
-    }
-    90% {
-      transform: rotate(10deg) translate(50vw, -20vw);
-    }
-    100% {
-      transform: translate(60vw, 0);
-    }
-  }
-  .animationRun2 {
-    animation-name: run2;
-    animation-duration: 2.5s;
-    animation-iteration-count: infinite;
-  }
-
-  @keyframes run2 {
-    0% {
-      transform: translate(0px, 0px);
-    }
-    15% {
-      transform: rotate(10deg) translate(8vw, -5vw);
-    }
-    25% {
-      transform: translate(15vw, 0);
-    }
-    40% {
-      transform: rotate(10deg) translate(25vw, -5vw);
-    }
-    50% {
-      transform: translate(30vw, 0);
-    }
-    65% {
-      transform: rotate(90deg) translate(0, -50vw);
-    }
-    100% {
-      transform: rotate(90deg) translate(0, -50vw);
-    }
   }
 }
