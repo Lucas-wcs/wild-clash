@@ -50,7 +50,7 @@ function RunPage() {
 
     if (fighter1Stat > fighter2Stat) {
       setProgressLife(100);
-      setProgressLife2(Math.random() * 100);
+      setProgressLife2(80);
       setAnimationRun("animationRun");
       setAnimationRun2("animationRun2");
 
@@ -71,7 +71,7 @@ function RunPage() {
       }, 2500);
     } else {
       setProgressLife2(100);
-      setProgressLife(Math.random() * 100);
+      setProgressLife(80);
       setAnimationRun("animationUpRun2");
       setAnimationRun2("animationUpRun");
       setTimeout(() => {
@@ -99,8 +99,8 @@ function RunPage() {
   return (
     <div className="run">
       <div className="runContainer">
-        <p className="runTitle">Deja Vu</p>
-        <HealthBar />
+        <p className="runTitle">3rd Trial : ESCAPE !</p>
+        <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />
         {content}
       </div>
       <div className="runCard">

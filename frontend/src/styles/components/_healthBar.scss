@@ -13,6 +13,7 @@
   .healthBar2players {
     display: flex;
     justify-content: space-around;
+    gap: 5vw;
   }
 
   .healthBarContainer {
@@ -56,6 +57,7 @@
 
     p {
       font-size: 2vw;
+      color: white;
     }
     .lastP {
       padding-right: 3vw;
