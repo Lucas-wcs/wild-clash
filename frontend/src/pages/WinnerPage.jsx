@@ -1,11 +1,11 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useWindowSize from "react-use/lib/useWindowSize";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
 import Confetti from "react-confetti";
+import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function WinnerPage() {
-  const location = useLocation();
-  const urlImgFighter1 = location.state.imgFighter1;
+  const { selectHero1 } = useContext(HeroLoaderContext);
   const navigate = useNavigate();
 
   const handleNewGame = () => {
@@ -26,7 +26,7 @@ function WinnerPage() {
       <Confetti width={width} height={height} />
 
       <div className="img-winner">
-        <img src={urlImgFighter1} alt="winner" />
+        <img src={selectHero1} alt="winner" />
       </div>
 
       <div className="secondContainer">

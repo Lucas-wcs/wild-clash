@@ -14,6 +14,8 @@
 .runContainer {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  gap: 4vw;
 }
 
 .runTitle {
@@ -64,11 +66,10 @@
   bottom: 5%;
   left: 5%;
   background-color: aliceblue;
-  padding: 8%;
   border-radius: 20px;
-  width: 10%;
   height: 25%;
   border: 5px solid black;
+  transform: rotate(75deg);
 }
 
 .runCard2 {
@@ -76,9 +77,154 @@
   bottom: 2%;
   left: 15%;
   background-color: aliceblue;
-  padding: 8%;
   border-radius: 20px;
-  width: 10%;
   height: 25%;
   border: 5px solid black;
+  transform: rotate(75deg);
+}
+
+.resultRun {
+  background-color: black;
+  color: white;
+  padding: 1% 3% 1% 3%;
+  border-radius: 30px;
+  font-size: 3vw;
+  width: 15vw;
+  align-self: center;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  font-size: 15vw;
+  color: white;
+}
+
+.animationRun {
+  animation-name: run1;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes run1 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  15% {
+    transform: rotate(10deg) translate(5vw, -5vw);
+  }
+  25% {
+    transform: translate(10vw, 0);
+  }
+  40% {
+    transform: rotate(10deg) translate(15vw, -5vw);
+  }
+  50% {
+    transform: translate(20vw, 0);
+  }
+  65% {
+    transform: rotate(10deg) translate(25vw, -10vw);
+  }
+  75% {
+    transform: translate(30vw, 0);
+  }
+  90% {
+    transform: rotate(10deg) translate(50vw, -20vw);
+  }
+  100% {
+    transform: translate(80vw, 0);
+  }
+}
+.animationRun2 {
+  animation-name: run2;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes run2 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  15% {
+    transform: rotate(10deg) translate(8vw, -5vw);
+  }
+  25% {
+    transform: translate(15vw, 0);
+  }
+  40% {
+    transform: rotate(10deg) translate(25vw, -5vw);
+  }
+  50% {
+    transform: translate(30vw, 0);
+  }
+  65% {
+    transform: rotate(90deg) translate(0, -35vw);
+  }
+  100% {
+    transform: rotate(90deg) translate(0, -45vw);
+  }
+}
+.animationUpRun {
+  animation-name: runUp1;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes runUp1 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  15% {
+    transform: rotate(10deg) translate(5vw, -5vw);
+  }
+  25% {
+    transform: translate(10vw, 0);
+  }
+  40% {
+    transform: rotate(10deg) translate(15vw, -5vw);
+  }
+  50% {
+    transform: translate(20vw, 0);
+  }
+  60% {
+    transform: rotate(10deg) translate(25vw, -10vw);
+  }
+  70% {
+    transform: translate(30vw, 0);
+  }
+  80% {
+    transform: rotate(10deg) translate(50vw, -20vw);
+  }
+  100% {
+    transform: translate(70vw, 0);
+  }
+}
+.animationUpRun2 {
+  animation-name: runUp2;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes runUp2 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  15% {
+    transform: rotate(10deg) translate(12vw, -5vw);
+  }
+  25% {
+    transform: translate(25vw, 0);
+  }
+  40% {
+    transform: rotate(10deg) translate(35vw, -5vw);
+  }
+  50% {
+    transform: translate(40vw, 0);
+  }
+  65% {
+    transform: rotate(90deg) translate(3vw, -45vw);
+  }
+  100% {
+    transform: rotate(90deg) translate(3vw, -55vw);
+  }
 }

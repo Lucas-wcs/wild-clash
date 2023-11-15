@@ -1,9 +1,11 @@
 import { motion, animate } from "framer-motion";
 import { PropTypes } from "prop-types";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { useRouteLoaderData } from "react-router-dom";
+import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
-function HealthBar({ value, value2, selectHero1, selectHero2 }) {
+function HealthBar({ selectHero1, selectHero2 }) {
+  const { progressLife, progressLife2 } = useContext(HeroLoaderContext);
   const progressTextRef = useRef(null);
   const progressTextRef2 = useRef(null);
 
@@ -21,25 +23,25 @@ function HealthBar({ value, value2, selectHero1, selectHero2 }) {
 
   useEffect(() => {
     if (progressTextRef.current != null) {
-      animate(0, value, {
+      animate(0, progressLife, {
         duration: 2.5,
         onUpdate: (pv) => {
           progressTextRef.current.textContent = pv.toFixed(0);
         },
       });
     }
-  }, [value]);
+  }, [progressLife]);
 
   useEffect(() => {
     if (progressTextRef2.current != null) {
-      animate(0, value2, {
+      animate(0, progressLife2, {
         duration: 2.5,
         onUpdate: (pv) => {
           progressTextRef2.current.textContent = pv.toFixed(0);
         },
       });
     }
-  }, [value2]);
+  }, [progressLife2]);
 
   return (
     <div className="healthBar">
@@ -55,7 +57,7 @@ function HealthBar({ value, value2, selectHero1, selectHero2 }) {
               <motion.div
                 className="bar"
                 animate={{
-                  width: `${value}%`,
+                  width: `${progressLife}%`,
                 }}
                 transition={{
                   duration: 2.5,
@@ -68,7 +70,7 @@ function HealthBar({ value, value2, selectHero1, selectHero2 }) {
             <p>pv</p>
           </div>
         </div>
-
+        <img src="./public/images/VS.png" alt="Bouton Versus" />
         <div className="healthBar1Player">
           <div className="textLevelHealthBar">
             <p ref={progressTextRef2}>0</p>
@@ -79,7 +81,7 @@ function HealthBar({ value, value2, selectHero1, selectHero2 }) {
               <motion.div
                 className="bar"
                 animate={{
-                  width: `${value2}%`,
+                  width: `${progressLife2}%`,
                 }}
                 transition={{
                   duration: 2.5,
@@ -94,8 +96,6 @@ function HealthBar({ value, value2, selectHero1, selectHero2 }) {
 }
 
 HealthBar.propTypes = {
-  value: PropTypes.number.isRequired,
-  value2: PropTypes.number.isRequired,
   selectHero1: PropTypes.string.isRequired,
   selectHero2: PropTypes.string.isRequired,
 };

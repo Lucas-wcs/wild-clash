@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PropTypes } from "prop-types";
+import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
-function FightButton({
-  setProgressLife2,
-  setProgressLife,
-  selectHero1,
-  selectHero2,
-}) {
+function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
+  const { setProgressLife2, setProgressLife } = useContext(HeroLoaderContext);
   const heroes = useRouteLoaderData("app");
   const navigate = useNavigate();
   let fighter1Stat = "";
@@ -31,6 +28,7 @@ function FightButton({
       setProgressLife2(0);
       setAnimationFight("animationWinL");
       setAnimationFight2("animationDefeatR");
+      setSaveWinner(1);
       setTimeout(() => {
         navigate("/bombpage", {
           state: { selectHero1, selectHero2 },
@@ -100,10 +98,9 @@ function FightButton({
 }
 
 FightButton.propTypes = {
-  setProgressLife: PropTypes.func.isRequired,
-  setProgressLife2: PropTypes.func.isRequired,
   selectHero1: PropTypes.string.isRequired,
   selectHero2: PropTypes.string.isRequired,
+  setSaveWinner: PropTypes.func.isRequired,
 };
 
 export default FightButton;

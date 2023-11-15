@@ -9,6 +9,9 @@ function App() {
   const orientation = useScreenOrientation();
   const [selectHero1, setSelectHero1] = useState("");
   const [selectHero2, setSelectHero2] = useState("");
+  const [saveWinner, setSaveWinner] = useState(0);
+  const [progressLife, setProgressLife] = useState(0);
+  const [progressLife2, setProgressLife2] = useState(0);
 
   const valueOfContext = useMemo(() => {
     return {
@@ -16,8 +19,21 @@ function App() {
       setSelectHero1,
       selectHero2,
       setSelectHero2,
+      saveWinner,
+      setSaveWinner,
+      progressLife,
+      setProgressLife,
+      progressLife2,
+      setProgressLife2,
     };
-  }, [selectHero1, selectHero2, setSelectHero1, setSelectHero2]);
+  }, [
+    selectHero1,
+    selectHero2,
+    setSelectHero1,
+    setSelectHero2,
+    saveWinner,
+    setSaveWinner,
+  ]);
 
   return (
     <HeroLoaderContext.Provider value={valueOfContext}>
