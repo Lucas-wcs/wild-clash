@@ -34,11 +34,7 @@ function Home() {
             className="logo-1"
             ref={button}
           >
-            <img
-              className="logoButtonL"
-              src="./public/images/logo_1-1.png"
-              alt=""
-            />
+            <img className="logoButtonL" src="./images/logo_1-1.png" alt="" />
           </button>
         </div>
 
@@ -52,20 +48,12 @@ function Home() {
               <track kind="captions" />
               <source src="/sons/tonnerre.mp3" type="audio/mp3" />
             </audio>
-            <img
-              className="logoButtonR"
-              src="./public/images/logo_2.png"
-              alt=""
-            />
+            <img className="logoButtonR" src="./images/logo_2.png" alt="" />
           </button>
         </div>
       </div>
       <div className={`home2 ${isFlash}`}>
-        <img
-          className="homelogo"
-          src="public/images/homeLogo.png"
-          alt="homeLogo"
-        />
+        <img className="homelogo" src="/images/homeLogo.png" alt="homeLogo" />
         <LaunchButton className="launchbutton" />
         <WikiButton className="wikiButton" />
       </div>
