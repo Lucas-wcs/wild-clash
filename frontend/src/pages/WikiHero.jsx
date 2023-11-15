@@ -1,9 +1,29 @@
 import { useRouteLoaderData } from "react-router-dom";
 import { useState } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import Card from "../components/Card";
 
 function WikiHero() {
   const allHeroes = useRouteLoaderData("app");
+
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 3,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 3,
+      slidesToSlide: 3,
+    },
+  };
 
   const [searchHero, setSearchHero] = useState("");
   const [alignmentHero, setAlignmentHero] = useState("");
@@ -51,7 +71,16 @@ function WikiHero() {
           role="presentation"
         />
       </div>
-      <div className="displayHeroes">
+
+      <Carousel
+        // eslint-disable-next-line react/jsx-boolean-value
+        swipeable={true}
+        responsive={responsive}
+        // eslint-disable-next-line react/jsx-boolean-value
+        infinite={true}
+        customTransition="all 2s"
+        itemClass="carousel-item-padding-40-px"
+      >
         {allHeroes.length > 0 &&
           allHeroes
             .filter((align) =>
@@ -63,7 +92,7 @@ function WikiHero() {
             .map((filtered) => (
               <Card key={filtered.data.name} hero={filtered} />
             ))}
-      </div>
+      </Carousel>
     </div>
   );
 }

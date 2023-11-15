@@ -89,4 +89,68 @@
     border-radius: white;
     cursor: pointer;
   }
+  .animationRun {
+    animation-name: run1;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes run1 {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    15% {
+      transform: rotate(10deg) translate(5vw, -5vw);
+    }
+    25% {
+      transform: translate(10vw, 0);
+    }
+    40% {
+      transform: rotate(10deg) translate(15vw, -5vw);
+    }
+    50% {
+      transform: translate(20vw, 0);
+    }
+    65% {
+      transform: rotate(10deg) translate(25vw, -10vw);
+    }
+    75% {
+      transform: translate(30vw, 0);
+    }
+    90% {
+      transform: rotate(10deg) translate(50vw, -20vw);
+    }
+    100% {
+      transform: translate(60vw, 0);
+    }
+  }
+  .animationRun2 {
+    animation-name: run2;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes run2 {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    15% {
+      transform: rotate(10deg) translate(8vw, -5vw);
+    }
+    25% {
+      transform: translate(15vw, 0);
+    }
+    40% {
+      transform: rotate(10deg) translate(25vw, -5vw);
+    }
+    50% {
+      transform: translate(30vw, 0);
+    }
+    65% {
+      transform: rotate(90deg) translate(0, -50vw);
+    }
+    100% {
+      transform: rotate(90deg) translate(0, -50vw);
+    }
+  }
 }

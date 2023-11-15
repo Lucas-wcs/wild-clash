@@ -5,8 +5,8 @@ import { PropTypes } from "prop-types";
 function FightButton({
   setProgressLife2,
   setProgressLife,
-  imgFighter1,
-  imgFighter2,
+  selectHero1,
+  selectHero2,
 }) {
   const heroes = useRouteLoaderData("app");
   const navigate = useNavigate();
@@ -15,10 +15,12 @@ function FightButton({
 
   const [animationFight, setAnimationFight] = useState("animation1");
   const [animationFight2, setAnimationFight2] = useState("animation2");
+  const [desactivateButton, setDesactivateButton] = useState(false);
 
   const handleFight = () => {
-    const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
-    const hero2 = heroes.find((hero) => hero.data.image.url === imgFighter2);
+    setDesactivateButton(true);
+    const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
+    const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
     if (hero1 && hero2) {
       fighter1Stat = parseInt(hero1.data.powerstats.strength, 10);
       fighter2Stat = parseInt(hero2.data.powerstats.strength, 10);
@@ -30,8 +32,8 @@ function FightButton({
       setAnimationFight("animationWinL");
       setAnimationFight2("animationDefeatR");
       setTimeout(() => {
-        navigate("/winner", {
-          state: { imgFighter1, imgFighter2 },
+        navigate("/bombpage", {
+          state: { selectHero1, selectHero2 },
         });
       }, 3000);
     } else {
@@ -40,9 +42,7 @@ function FightButton({
       setAnimationFight("animationDefeatL");
       setAnimationFight2("animationWinR");
       setTimeout(() => {
-        navigate("/loser", {
-          state: { imgFighter1, imgFighter2 },
-        });
+        navigate("/bombpage");
       }, 3000);
     }
   };
@@ -63,27 +63,34 @@ function FightButton({
     };
   }, [count]);
 
+  let content = null;
+  if (count === 0 && desactivateButton === false) {
+    content = (
+      <button className="resultFight" type="button" onClick={handleFight}>
+        Fight !
+      </button>
+    );
+  } else if (desactivateButton === false) {
+    content = <div className="timer">{count}</div>;
+  } else {
+    content = <div />;
+  }
+
   return (
     <div className="buttonFightTimer">
       <div className="fightButton">
         <div>
           <img
             className={`imageFighter ${animationFight}`}
-            src={imgFighter1}
+            src={selectHero1}
             alt="fighter1"
           />
         </div>
-        {count === 0 ? (
-          <button className="resultFight" type="button" onClick={handleFight}>
-            Fight !
-          </button>
-        ) : (
-          <div className="timer">{count}</div>
-        )}
+        {content}
         <div>
           <img
             className={`imageFighter ${animationFight2}`}
-            src={imgFighter2}
+            src={selectHero2}
             alt="fighter2"
           />
         </div>
@@ -95,8 +102,8 @@ function FightButton({
 FightButton.propTypes = {
   setProgressLife: PropTypes.func.isRequired,
   setProgressLife2: PropTypes.func.isRequired,
-  imgFighter1: PropTypes.string.isRequired,
-  imgFighter2: PropTypes.string.isRequired,
+  selectHero1: PropTypes.string.isRequired,
+  selectHero2: PropTypes.string.isRequired,
 };
 
 export default FightButton;
