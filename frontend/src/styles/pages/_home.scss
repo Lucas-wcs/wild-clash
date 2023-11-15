@@ -44,8 +44,9 @@
     }
   }
   .homelogo {
-    width: 60%;
-    transform: translateY(-30%);
+    position: absolute;
+    width: 45%;
+    top: 3%;
   }
 
   .homeButtons {
@@ -138,20 +139,48 @@
 }
 
 @media screen and (max-width: 960px) {
-  .logo-1 {
-    all: unset;
-    position: absolute;
-    right: 0;
-    top: 33%;
-  }
+  .home {
+    .curtain-panel-right {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 50vw;
 
-  .curtain-panel-left {
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 30vw;
-    background-image: url("images/Battles_Iron_Man_hero_500524_1.jpg");
+      .logo-2 {
+        all: unset;
+        position: absolute;
+        left: 0;
+        top: 33%;
+        .storm {
+          position: absolute;
+        }
+        .logoButtonR {
+          width: 50%;
+        }
+      }
+    }
+
+    .curtain-panel-left {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 50vw;
+
+      .logo-1 {
+        all: unset;
+        position: absolute;
+        right: 0;
+        top: 33%;
+
+        .logoButtonL {
+          width: 50%;
+          transform: translate(100%, 0%);
+        }
+      }
+    }
   }
 }

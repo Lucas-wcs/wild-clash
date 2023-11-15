@@ -5,8 +5,8 @@ import { PropTypes } from "prop-types";
 function FightButton({
   setProgressLife2,
   setProgressLife,
-  imgFighter1,
-  imgFighter2,
+  selectHero1,
+  selectHero2,
 }) {
   const heroes = useRouteLoaderData("app");
   const navigate = useNavigate();
@@ -17,8 +17,8 @@ function FightButton({
   const [animationFight2, setAnimationFight2] = useState("animation2");
 
   const handleFight = () => {
-    const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
-    const hero2 = heroes.find((hero) => hero.data.image.url === imgFighter2);
+    const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
+    const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
     if (hero1 && hero2) {
       fighter1Stat = parseInt(hero1.data.powerstats.strength, 10);
       fighter2Stat = parseInt(hero2.data.powerstats.strength, 10);
@@ -30,8 +30,8 @@ function FightButton({
       setAnimationFight("animationWinL");
       setAnimationFight2("animationDefeatR");
       setTimeout(() => {
-        navigate("/winner", {
-          state: { imgFighter1, imgFighter2 },
+        navigate("/bombpage", {
+          state: { selectHero1, selectHero2 },
         });
       }, 3000);
     } else {
@@ -40,8 +40,8 @@ function FightButton({
       setAnimationFight("animationDefeatL");
       setAnimationFight2("animationWinR");
       setTimeout(() => {
-        navigate("/loser", {
-          state: { imgFighter1, imgFighter2 },
+        navigate("/bombpage", {
+          state: { selectHero1, selectHero2 },
         });
       }, 3000);
     }
@@ -69,7 +69,7 @@ function FightButton({
         <div>
           <img
             className={`imageFighter ${animationFight}`}
-            src={imgFighter1}
+            src={selectHero1}
             alt="fighter1"
           />
         </div>
@@ -83,7 +83,7 @@ function FightButton({
         <div>
           <img
             className={`imageFighter ${animationFight2}`}
-            src={imgFighter2}
+            src={selectHero2}
             alt="fighter2"
           />
         </div>
@@ -95,8 +95,8 @@ function FightButton({
 FightButton.propTypes = {
   setProgressLife: PropTypes.func.isRequired,
   setProgressLife2: PropTypes.func.isRequired,
-  imgFighter1: PropTypes.string.isRequired,
-  imgFighter2: PropTypes.string.isRequired,
+  selectHero1: PropTypes.string.isRequired,
+  selectHero2: PropTypes.string.isRequired,
 };
 
 export default FightButton;

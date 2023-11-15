@@ -1,12 +1,10 @@
-import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import HeroLoaderContext from "../contexts/HeroLoaderContext";
 import FightButton from "../components/FightButton";
 import HealthBar from "../components/HealthBar";
 
 function FightPage() {
-  const location = useLocation();
-  const imgFighter1 = location.state.selectHero1;
-  const imgFighter2 = location.state.selectHero2;
+  const { selectHero1, selectHero2 } = useContext(HeroLoaderContext);
 
   const [progressLife, setProgressLife] = useState(0);
   const [progressLife2, setProgressLife2] = useState(0);
@@ -21,16 +19,16 @@ function FightPage() {
         />
       </div>
       <HealthBar
-        imgFighter1={imgFighter1}
-        imgFighter2={imgFighter2}
+        selectHero1={selectHero1}
+        selectHero2={selectHero2}
         value={progressLife}
         value2={progressLife2}
       />
       <FightButton
         setProgressLife={setProgressLife}
         setProgressLife2={setProgressLife2}
-        imgFighter1={imgFighter1}
-        imgFighter2={imgFighter2}
+        selectHero1={selectHero1}
+        selectHero2={selectHero2}
       />
     </div>
   );
