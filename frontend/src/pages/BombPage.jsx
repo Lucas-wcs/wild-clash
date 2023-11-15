@@ -68,23 +68,6 @@ function BombPage() {
     }
   };
 
-  // let content = null;
-  // if (timer === 0) {
-  //   content = (
-  //     <button className="resultBomb" type="button" onClick={handleBomb}>
-  //       Go !
-  //     </button>
-  //   );
-  // } else if (timer !== 0 && desactivateButton === false) {
-  //   content = (
-  //     <button type="button" className="timer" onClick={handleDecrementTime}>
-  //       {timer}
-  //     </button>
-  //   );
-  // } else {
-  //   content = <div />;
-  // }
-
   return (
     <div className="BombPage">
       <div className="bombPageUp">
@@ -94,7 +77,7 @@ function BombPage() {
         </button>
         <HealthBar />
       </div>
-      <div className="">
+      <div className="mainContainer">
         <div className="concurentContainer">
           <img className="bombCard1" src={selectHero1} alt="1" />
         </div>
@@ -105,5 +88,4 @@ function BombPage() {
     </div>
   );
 }
-
 export default BombPage;

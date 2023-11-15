@@ -1,8 +1,7 @@
 .BombPage {
   min-height: 100vh;
   overflow: hidden;
-  background: #0f3854;
-  background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+  background-image: url("./public/images/bombpage.jpg");
   background-size: 100%;
   display: flex;
   flex-direction: column;
@@ -11,14 +10,73 @@
   .titlePageBomb {
     text-align: center;
     height: 50%;
+  }
+  p {
+    font-size: 70px;
+    color: white;
+    color: #ffffff;
+    text-align: center;
+    margin-right: 50%;
+    margin-top: 20%;
+    // transform: translate(-50%, -50%);
+    color: #daf6ff;
+    text-shadow:
+      0 0 20px rgba(10, 175, 230, 1),
+      0 0 20px rgba(10, 175, 230, 0);
+  }
+  .largeBox {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 35vh;
+  }
+  .titlePageBomb {
     color: white;
   }
 
   .concurentContainer {
     border: 5px solid transparent;
+    width: 15vw;
     border-radius: 15px;
     background: linear-gradient(var(--hero-color), var(--vilain-color))
       border-box;
+    animation: zoom-in-zoom-out 2s ease infinite;
+  }
+  .secondConcurentContainer {
+    height: 46vh;
+    width: 15vw;
+    border: 5px solid transparent;
+    border-radius: 15px;
+    background: linear-gradient(var(--hero-color), var(--vilain-color))
+      border-box;
+    animation: zoom-in-zoom-out 2s ease infinite;
+  }
+
+  @keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  .inlineDiv {
+    height: 44.5vh;
+    border-radius: 15px;
+    background-color: rgb(39, 35, 35);
+  }
+  .ContainerImageBomb {
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 5%;
+    height: 40vh;
+    width: 30vw;
+    left: 42%;
     display: flex;
     justify-content: space-around;
     width: 15vw;
