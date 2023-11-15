@@ -12,9 +12,9 @@ function BombPage() {
     setProgressLife,
     setProgressLife2,
   } = useContext(HeroLoaderContext);
-  
+
   const audio = useRef(null);
-useEffect(() => {
+  useEffect(() => {
     audio.current.muted = false;
   }, [audio]);
   const navigate = useNavigate();
@@ -70,7 +70,6 @@ useEffect(() => {
 
   return (
     <div className="BombPage">
-
       <audio ref={audio} muted>
         <track kind="captions" />
         <source src="/sons/tic-tac.mp3" type="audio/mp3" />

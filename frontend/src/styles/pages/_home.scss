@@ -66,6 +66,7 @@
     top: 0;
     bottom: 0;
     width: 50vw;
+    max-width: 50vw;
     background-image: url("images/Battles_Iron_Man_hero_500524_1.jpg");
     background-size: cover;
     background-position: right;
@@ -75,8 +76,10 @@
       position: absolute;
       right: 0;
       top: 33%;
+      max-width: 80%;
       .logoButtonL {
         width: 100%;
+        max-height: 100vh;
       }
     }
   }
@@ -90,17 +93,20 @@
     width: 50vw;
     background-image: url("/images/Battles_Iron_Man_hero_500524_2.jpg");
     background-size: cover;
+    background-position: left;
 
     .logo-2 {
       all: unset;
       position: absolute;
       left: 0;
       top: 33%;
+      max-width: 80%;
       .storm {
         position: absolute;
       }
       .logoButtonR {
         width: 100%;
+        max-height: 100vh;
       }
     }
   }
