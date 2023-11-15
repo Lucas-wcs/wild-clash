@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+/* eslint-disable no-undef */
+import React, { useState, useRef, useEffect } from "react";
 // import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function BombPage() {
   const [timer, setTimer] = useState(60);
+  const audio = useRef(null);
+
+  useEffect(() => {
+    audio.current.muted = false;
+  }, [audio]);
 
   const handleDecrementTime = () => {
     const myInterval = setInterval(() => {
+      audio.current.play();
       setTimer((oldValue) => {
         if (oldValue === 1) {
           clearInterval(myInterval);
@@ -61,6 +68,10 @@ function BombPage() {
 
   return (
     <div className="BombPage">
+      <audio ref={audio} muted>
+        <track kind="captions" />
+        <source src="/sons/tic-tac.mp3" type="audio/mp3" />
+      </audio>
       <h1 className="titlePageBomb">Defuse The Bomb</h1>
       <div className="ContainerImageBomb">
         <p>{timer}</p>
