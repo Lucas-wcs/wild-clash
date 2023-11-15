@@ -9,7 +9,6 @@ function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
   const navigate = useNavigate();
   let fighter1Stat = "";
   let fighter2Stat = "";
-
   const [animationFight, setAnimationFight] = useState("animation1");
   const [animationFight2, setAnimationFight2] = useState("animation2");
   const [desactivateButton, setDesactivateButton] = useState(false);
@@ -23,16 +22,14 @@ function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
       fighter2Stat = parseInt(hero2.data.powerstats.strength, 10);
     }
 
-    if (fighter1Stat > fighter2Stat) {
+    if (fighter1Stat >= fighter2Stat) {
       setProgressLife(Math.random() * 100);
       setProgressLife2(0);
       setAnimationFight("animationWinL");
       setAnimationFight2("animationDefeatR");
       setSaveWinner(1);
       setTimeout(() => {
-        navigate("/bombpage", {
-          state: { selectHero1, selectHero2 },
-        });
+        navigate("/bombpage");
       }, 3000);
     } else {
       setProgressLife2(Math.random() * 100);
@@ -47,9 +44,9 @@ function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
 
   const [count, setCount] = useState(3);
   useEffect(() => {
+    setProgressLife(100);
+    setProgressLife2(100);
     const countdownInterval = setInterval(() => {
-      setProgressLife(100);
-      setProgressLife2(100);
       if (count > 0) {
         setCount(count - 1);
       } else {
