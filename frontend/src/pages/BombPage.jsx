@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import HeroLoaderContext from "../contexts/HeroLoaderContext";
 import HealthBar from "../components/HealthBar";
@@ -12,7 +12,11 @@ function BombPage() {
     setProgressLife,
     setProgressLife2,
   } = useContext(HeroLoaderContext);
-
+  
+  const audio = useRef(null);
+useEffect(() => {
+    audio.current.muted = false;
+  }, [audio]);
   const navigate = useNavigate();
   const heroes = useRouteLoaderData("app");
   const [timer, setTimer] = useState(10);
@@ -27,6 +31,7 @@ function BombPage() {
 
   const handleBomb = () => {
     const myInterval = setInterval(() => {
+      audio.current.play();
       setTimer((oldValue) => {
         if (oldValue === 1) {
           clearInterval(myInterval);
@@ -68,6 +73,12 @@ function BombPage() {
 
   return (
     <div className="BombPage">
+
+      <audio ref={audio} muted>
+        <track kind="captions" />
+        <source src="/sons/tic-tac.mp3" type="audio/mp3" />
+      </audio>
+
       <div className="bombPageUp">
         <h1 className="titlePageBomb">Defuse The Bomb</h1>
         <button type="button" className="timer" onClick={handleBomb}>
