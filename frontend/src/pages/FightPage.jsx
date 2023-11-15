@@ -4,8 +4,7 @@ import FightButton from "../components/FightButton";
 import HealthBar from "../components/HealthBar";
 
 function FightPage() {
-  const { selectHero1, selectHero2, setSaveWinner } =
-    useContext(HeroLoaderContext);
+  const { selectHero1, selectHero2 } = useContext(HeroLoaderContext);
 
   return (
     <div className="fightPage">
@@ -17,11 +16,7 @@ function FightPage() {
         />
       </div>
       <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />
-      <FightButton
-        selectHero1={selectHero1}
-        selectHero2={selectHero2}
-        setSaveWinner={setSaveWinner}
-      />
+      <FightButton selectHero1={selectHero1} selectHero2={selectHero2} />
     </div>
   );
 }

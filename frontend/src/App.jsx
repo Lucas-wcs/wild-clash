@@ -33,6 +33,10 @@ function App() {
     setSelectHero2,
     saveWinner,
     setSaveWinner,
+    progressLife,
+    setProgressLife,
+    progressLife2,
+    setProgressLife2,
   ]);
 
   return (

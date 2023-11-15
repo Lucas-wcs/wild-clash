@@ -20,13 +20,16 @@ function RunPage() {
   let fighter1Stat = "";
   let fighter2Stat = "";
 
+  useEffect(() => {
+    setProgressLife(0);
+    setProgressLife2(0);
+  }, []);
+
   const [animationRun, setAnimationRun] = useState("");
   const [animationRun2, setAnimationRun2] = useState("");
   const [count, setCount] = useState(3);
   useEffect(() => {
     const countdownInterval = setInterval(() => {
-      setProgressLife(0);
-      setProgressLife2(0);
       if (count > 0) {
         setCount(count - 1);
       } else {
@@ -38,22 +41,14 @@ function RunPage() {
     };
   }, [count]);
   const [desactivateButton, setDesactivateButton] = useState(false);
-
-  const handleRun = () => {
-    setDesactivateButton(true);
-    const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
-    const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
-    if (hero1 && hero2) {
-      fighter1Stat = parseInt(hero1.data.powerstats.speed, 10);
-      fighter2Stat = parseInt(hero2.data.powerstats.speed, 10);
-    }
-
+  const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
+  const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
+  if (hero1 && hero2) {
+    fighter1Stat = parseInt(hero1.data.powerstats.speed, 10);
+    fighter2Stat = parseInt(hero2.data.powerstats.speed, 10);
+  }
+  useEffect(() => {
     if (fighter1Stat > fighter2Stat) {
-      setProgressLife(100);
-      setProgressLife2(Math.random() * 100);
-      setAnimationRun("animationRun");
-      setAnimationRun2("animationRun2");
-
       if (saveWinner === 1) {
         setSaveWinner(2);
       } else if (saveWinner === 2) {
@@ -61,6 +56,17 @@ function RunPage() {
       } else {
         setSaveWinner(1);
       }
+    }
+  }, []);
+
+  const handleRun = () => {
+    setDesactivateButton(true);
+
+    if (fighter1Stat > fighter2Stat) {
+      setProgressLife(100);
+      setProgressLife2(80);
+      setAnimationRun("animationRun");
+      setAnimationRun2("animationRun2");
 
       setTimeout(() => {
         if (saveWinner >= 2) {
@@ -71,7 +77,7 @@ function RunPage() {
       }, 2500);
     } else {
       setProgressLife2(100);
-      setProgressLife(Math.random() * 100);
+      setProgressLife(80);
       setAnimationRun("animationUpRun2");
       setAnimationRun2("animationUpRun");
       setTimeout(() => {
@@ -99,8 +105,8 @@ function RunPage() {
   return (
     <div className="run">
       <div className="runContainer">
-        <p className="runTitle">Deja Vu</p>
-        <HealthBar />
+        <p className="runTitle">3rd Trial : ESCAPE !</p>
+        <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />
         {content}
       </div>
       <div className="runCard">
