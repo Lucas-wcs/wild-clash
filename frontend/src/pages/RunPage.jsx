@@ -20,13 +20,16 @@ function RunPage() {
   let fighter1Stat = "";
   let fighter2Stat = "";
 
+  useEffect(() => {
+    setProgressLife(0);
+    setProgressLife2(0);
+  }, []);
+
   const [animationRun, setAnimationRun] = useState("");
   const [animationRun2, setAnimationRun2] = useState("");
   const [count, setCount] = useState(3);
   useEffect(() => {
     const countdownInterval = setInterval(() => {
-      setProgressLife(0);
-      setProgressLife2(0);
       if (count > 0) {
         setCount(count - 1);
       } else {

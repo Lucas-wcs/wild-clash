@@ -43,6 +43,7 @@ function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
   };
 
   const [count, setCount] = useState(3);
+
   useEffect(() => {
     setProgressLife(100);
     setProgressLife2(100);
