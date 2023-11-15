@@ -12,7 +12,7 @@ function ChooseFighter() {
   // const [selectHero2, setSelectHero2] = useState("");
   const navigate = useNavigate();
   const handlePage = () => {
-    navigate("/fight");
+    navigate("/runpage");
   };
   const [heroName1, setHeroName1] = useState("");
   const [heroName2, setHeroName2] = useState("");
