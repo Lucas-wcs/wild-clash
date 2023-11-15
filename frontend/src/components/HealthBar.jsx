@@ -67,14 +67,12 @@ function HealthBar({ selectHero1, selectHero2 }) {
           </div>
           <div className="textLevelHealthBar">
             <p ref={progressTextRef}>0</p>
-            <p>pv</p>
           </div>
         </div>
         <img src="./public/images/VS.png" alt="Bouton Versus" />
         <div className="healthBar1Player">
           <div className="textLevelHealthBar">
             <p ref={progressTextRef2}>0</p>
-            <p className="lastP">pv</p>
           </div>
           <div className="healthBarContainer">
             <div className="levelhealthBar">
