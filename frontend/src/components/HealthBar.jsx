@@ -70,7 +70,7 @@ function HealthBar({ selectHero1, selectHero2 }) {
             <p>pv</p>
           </div>
         </div>
-
+        <img src="./public/images/VS.png" alt="Bouton Versus" />
         <div className="healthBar1Player">
           <div className="textLevelHealthBar">
             <p ref={progressTextRef2}>0</p>

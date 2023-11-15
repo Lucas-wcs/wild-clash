@@ -1,9 +1,9 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useRef, useEffect, useContext } from "react";
+import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function WinnerPage() {
-  const location = useLocation();
-  const urlImgFighter1 = location.state.imgFighter1;
+  const { selectHero1 } = useContext(HeroLoaderContext);
   const navigate = useNavigate();
   const audio = useRef(null);
 
@@ -19,7 +19,7 @@ function WinnerPage() {
   return (
     <div className="firstContainer2">
       <div className="img-winner2">
-        <img src={urlImgFighter1} alt="loser" />
+        <img src={selectHero1} alt="loser" />
       </div>
 
       <div className="secondContainer2">
