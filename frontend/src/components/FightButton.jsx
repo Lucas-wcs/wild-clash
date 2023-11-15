@@ -12,8 +12,10 @@ function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
 
   const [animationFight, setAnimationFight] = useState("animation1");
   const [animationFight2, setAnimationFight2] = useState("animation2");
+  const [desactivateButton, setDesactivateButton] = useState(false);
 
   const handleFight = () => {
+    setDesactivateButton(true);
     const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
     const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
     if (hero1 && hero2) {
@@ -38,9 +40,7 @@ function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
       setAnimationFight("animationDefeatL");
       setAnimationFight2("animationWinR");
       setTimeout(() => {
-        navigate("/bombpage", {
-          state: { selectHero1, selectHero2 },
-        });
+        navigate("/bombpage");
       }, 3000);
     }
   };
@@ -61,6 +61,19 @@ function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
     };
   }, [count]);
 
+  let content = null;
+  if (count === 0 && desactivateButton === false) {
+    content = (
+      <button className="resultFight" type="button" onClick={handleFight}>
+        Fight !
+      </button>
+    );
+  } else if (desactivateButton === false) {
+    content = <div className="timer">{count}</div>;
+  } else {
+    content = <div />;
+  }
+
   return (
     <div className="buttonFightTimer">
       <div className="fightButton">
@@ -71,13 +84,7 @@ function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
             alt="fighter1"
           />
         </div>
-        {count === 0 ? (
-          <button className="resultFight" type="button" onClick={handleFight}>
-            Fight !
-          </button>
-        ) : (
-          <div className="timer">{count}</div>
-        )}
+        {content}
         <div>
           <img
             className={`imageFighter ${animationFight2}`}
