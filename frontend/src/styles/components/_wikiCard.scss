@@ -77,8 +77,6 @@
   }
 }
 
-// responsive :
-
 @media screen and (max-width: 900px) {
   .card-container1 {
     .wikiCard {
@@ -168,5 +166,3 @@
     }
   }
 }
-
-// conflit avec _app.scss : p { padding: 5%; }

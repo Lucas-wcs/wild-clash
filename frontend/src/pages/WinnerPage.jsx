@@ -5,25 +5,24 @@ import Confetti from "react-confetti";
 import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function WinnerPage() {
-  const { selectHero1, setProgressLife, setProgressLife2 } =
+  const { selectHero1, setProgressLife, setProgressLife2, setSaveWinner } =
     useContext(HeroLoaderContext);
   const navigate = useNavigate();
 
   const handleNewGame = () => {
     setProgressLife(0);
     setProgressLife2(0);
+    setSaveWinner(0);
     navigate("/chooseFighter");
   };
 
   const { width, height } = useWindowSize();
   const audio = useRef(null);
-
   useEffect(() => {
     audio.current.muted = false;
     audio.current.play();
   }, [audio]);
 
-  // const button = useRef(null);
   return (
     <div className="firstContainer">
       <Confetti width={width} height={height} />
@@ -48,9 +47,6 @@ function WinnerPage() {
             />
           </button>
         </div>
-        {/* <button type="button" className="firstButton" onClick={handleNewGame}>
-          New Game
-        </button> */}
       </div>
 
       <div className="logo" />

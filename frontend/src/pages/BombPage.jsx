@@ -56,15 +56,12 @@ useEffect(() => {
       } else {
         setSaveWinner(1);
       }
-
       setTimeout(() => {
         navigate("/runpage");
       }, 10000);
     } else {
       setProgressLife2(100);
       setProgressLife(Math.random() * 100);
-      // setAnimationFight("placeholder");
-      // setAnimationFight2("placeholder");
       setTimeout(() => {
         navigate("/runpage");
       }, 10000);

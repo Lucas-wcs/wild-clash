@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import PropTypes from "prop-types";
 import ReactCardFlip from "react-card-flip";
 import { useState } from "react";
@@ -43,8 +42,7 @@ function Card({ hero }) {
 }
 
 Card.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  hero: PropTypes.object,
+  hero: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 export default Card;

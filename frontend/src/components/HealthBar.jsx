@@ -8,10 +8,10 @@ function HealthBar({ selectHero1, selectHero2 }) {
   const { progressLife, progressLife2 } = useContext(HeroLoaderContext);
   const progressTextRef = useRef(null);
   const progressTextRef2 = useRef(null);
-
   const heroes = useRouteLoaderData("app");
   const [heroName1, setHeroName1] = useState("");
   const [heroName2, setHeroName2] = useState("");
+
   useEffect(() => {
     const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
     const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
@@ -26,7 +26,9 @@ function HealthBar({ selectHero1, selectHero2 }) {
       animate(0, progressLife, {
         duration: 2.5,
         onUpdate: (pv) => {
-          progressTextRef.current.textContent = pv.toFixed(0);
+          if (progressTextRef.current != null) {
+            progressTextRef.current.textContent = pv.toFixed(0);
+          }
         },
       });
     }
@@ -37,7 +39,9 @@ function HealthBar({ selectHero1, selectHero2 }) {
       animate(0, progressLife2, {
         duration: 2.5,
         onUpdate: (pv) => {
-          progressTextRef2.current.textContent = pv.toFixed(0);
+          if (progressTextRef2.current != null) {
+            progressTextRef2.current.textContent = pv.toFixed(0);
+          }
         },
       });
     }

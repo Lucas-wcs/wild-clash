@@ -3,8 +3,9 @@ import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
-function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
-  const { setProgressLife2, setProgressLife } = useContext(HeroLoaderContext);
+function FightButton({ selectHero1, selectHero2 }) {
+  const { setProgressLife2, setProgressLife, setSaveWinner } =
+    useContext(HeroLoaderContext);
   const heroes = useRouteLoaderData("app");
   const navigate = useNavigate();
   let fighter1Stat = "";
@@ -43,7 +44,6 @@ function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
   };
 
   const [count, setCount] = useState(3);
-
   useEffect(() => {
     setProgressLife(100);
     setProgressLife2(100);
@@ -98,7 +98,6 @@ function FightButton({ selectHero1, selectHero2, setSaveWinner }) {
 FightButton.propTypes = {
   selectHero1: PropTypes.string.isRequired,
   selectHero2: PropTypes.string.isRequired,
-  setSaveWinner: PropTypes.func.isRequired,
 };
 
 export default FightButton;
