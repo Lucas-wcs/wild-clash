@@ -41,22 +41,14 @@ function RunPage() {
     };
   }, [count]);
   const [desactivateButton, setDesactivateButton] = useState(false);
-
-  const handleRun = () => {
-    setDesactivateButton(true);
-    const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
-    const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
-    if (hero1 && hero2) {
-      fighter1Stat = parseInt(hero1.data.powerstats.speed, 10);
-      fighter2Stat = parseInt(hero2.data.powerstats.speed, 10);
-    }
-
+  const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
+  const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
+  if (hero1 && hero2) {
+    fighter1Stat = parseInt(hero1.data.powerstats.speed, 10);
+    fighter2Stat = parseInt(hero2.data.powerstats.speed, 10);
+  }
+  useEffect(() => {
     if (fighter1Stat > fighter2Stat) {
-      setProgressLife(100);
-      setProgressLife2(80);
-      setAnimationRun("animationRun");
-      setAnimationRun2("animationRun2");
-
       if (saveWinner === 1) {
         setSaveWinner(2);
       } else if (saveWinner === 2) {
@@ -64,6 +56,17 @@ function RunPage() {
       } else {
         setSaveWinner(1);
       }
+    }
+  }, []);
+
+  const handleRun = () => {
+    setDesactivateButton(true);
+
+    if (fighter1Stat > fighter2Stat) {
+      setProgressLife(100);
+      setProgressLife2(80);
+      setAnimationRun("animationRun");
+      setAnimationRun2("animationRun2");
 
       setTimeout(() => {
         if (saveWinner >= 2) {

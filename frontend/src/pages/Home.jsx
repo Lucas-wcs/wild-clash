@@ -14,8 +14,10 @@ function Home() {
       setIsFlash("flash");
     }, 500);
     setTimeout(() => {
-      audio.current.muted = false;
-      audio.current.play();
+      if (audio.current != null) {
+        audio.current.muted = false;
+        audio.current.play();
+      }
     }, 1000);
   }
   return (
