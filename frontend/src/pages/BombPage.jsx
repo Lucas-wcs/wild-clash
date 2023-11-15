@@ -15,7 +15,7 @@ function BombPage() {
 
   const navigate = useNavigate();
   const heroes = useRouteLoaderData("app");
-  const [timer, setTimer] = useState(3);
+  const [timer, setTimer] = useState(10);
 
   let fighter1Stat = "";
   let fighter2Stat = "";
@@ -23,7 +23,7 @@ function BombPage() {
   useEffect(() => {
     setProgressLife(0);
     setProgressLife2(0);
-  });
+  }, []);
 
   const handleBomb = () => {
     const myInterval = setInterval(() => {
@@ -33,7 +33,7 @@ function BombPage() {
         }
         return oldValue - 1;
       });
-    }, 700);
+    }, 1000);
 
     const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
     const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
@@ -42,11 +42,9 @@ function BombPage() {
       fighter2Stat = parseInt(hero2.data.powerstats.intelligence, 10);
     }
 
-    if (fighter1Stat > fighter2Stat) {
+    if (fighter1Stat >= fighter2Stat) {
       setProgressLife(100);
       setProgressLife2(Math.random() * 100);
-      // setAnimationFight("placeholder");
-      // setAnimationFight2("placeholder");
 
       if (saveWinner === 1) {
         setSaveWinner(2);
@@ -56,7 +54,7 @@ function BombPage() {
 
       setTimeout(() => {
         navigate("/runpage");
-      }, 3000);
+      }, 10000);
     } else {
       setProgressLife2(100);
       setProgressLife(Math.random() * 100);
@@ -64,7 +62,7 @@ function BombPage() {
       // setAnimationFight2("placeholder");
       setTimeout(() => {
         navigate("/runpage");
-      }, 3000);
+      }, 10000);
     }
   };
 
@@ -75,7 +73,7 @@ function BombPage() {
         <button type="button" className="timer" onClick={handleBomb}>
           {timer}
         </button>
-        <HealthBar />
+        <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />
       </div>
       <div className="mainContainer">
         <div className="concurentContainer">

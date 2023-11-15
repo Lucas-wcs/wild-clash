@@ -5,10 +5,13 @@ import Confetti from "react-confetti";
 import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function WinnerPage() {
-  const { selectHero1 } = useContext(HeroLoaderContext);
+  const { selectHero1, setProgressLife, setProgressLife2 } =
+    useContext(HeroLoaderContext);
   const navigate = useNavigate();
 
   const handleNewGame = () => {
+    setProgressLife(0);
+    setProgressLife2(0);
     navigate("/chooseFighter");
   };
 

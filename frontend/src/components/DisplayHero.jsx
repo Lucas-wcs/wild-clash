@@ -36,8 +36,8 @@ DisplayHero.propTypes = {
   name: PropTypes.string.isRequired,
   selectHero1: PropTypes.string.isRequired,
   selectHero2: PropTypes.string.isRequired,
-  setSelectHero1: PropTypes.string.isRequired,
-  setSelectHero2: PropTypes.string.isRequired,
+  setSelectHero1: PropTypes.func.isRequired,
+  setSelectHero2: PropTypes.func.isRequired,
 };
 
 export default DisplayHero;

@@ -3,11 +3,14 @@ import { useRef, useEffect, useContext } from "react";
 import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function WinnerPage() {
-  const { selectHero1 } = useContext(HeroLoaderContext);
+  const { selectHero1, setProgressLife, setProgressLife2 } =
+    useContext(HeroLoaderContext);
   const navigate = useNavigate();
   const audio = useRef(null);
 
   const handleNewGame = () => {
+    setProgressLife(0);
+    setProgressLife2(0);
     navigate("/chooseFighter");
   };
 
