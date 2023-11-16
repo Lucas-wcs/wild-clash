@@ -8,8 +8,10 @@ function FightPage() {
   const audio = useRef(null);
 
   useEffect(() => {
-    audio.current.muted = false;
-    audio.current.play();
+    if (audio.current) {
+      audio.current.muted = false;
+      audio.current.play();
+    }
   }, [audio]);
 
   return (

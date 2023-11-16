@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import ReactCardFlip from "react-card-flip";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import WikiCard from "./WikiCard";
 import WikiPicture from "./WikiPicture";
 
@@ -18,12 +18,22 @@ function Card({
   combat,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const audio = useRef(null);
   const handleFlip = () => {
+    if (audio.current) {
+      audio.current.muted = false;
+      audio.current.play();
+    }
+
     setIsFlipped((prev) => !prev);
   };
 
   return (
     <div className="card">
+      <audio ref={audio} muted>
+        <track kind="captions" />
+        <source src="public/sons/flipcard-91468.mp3" type="audio/mp3" />
+      </audio>
       <ReactCardFlip
         isFlipped={isFlipped}
         flipDirection="horizontal"

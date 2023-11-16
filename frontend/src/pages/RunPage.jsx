@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import HeroLoaderContext from "../contexts/HeroLoaderContext";
 import HealthBar from "../components/HealthBar";
@@ -22,9 +22,15 @@ function RunPage() {
   let fighter1Stat = "";
   let fighter2Stat = "";
 
+  const audio = useRef(null);
+
   useEffect(() => {
     setProgressLife(0);
     setProgressLife2(0);
+    if (audio.current) {
+      audio.current.muted = false;
+      audio.current.play();
+    }
   }, []);
 
   const [animationRun, setAnimationRun] = useState("");
@@ -114,6 +120,13 @@ function RunPage() {
 
   return (
     <div className="run">
+      <audio ref={audio} muted>
+        <track kind="captions" />
+        <source
+          src="public/sons/3-2-1-go!-smash-ultimate-made-with-Voicemod-technology.mp3"
+          type="audio/mp3"
+        />
+      </audio>
       <div className="runContainer">
         <p className="runTitle">3rd Trial : ESCAPE !</p>
         <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />

@@ -16,15 +16,6 @@ function BombPage() {
   } = useContext(HeroLoaderContext);
   const audio = useRef(null);
   const audio2 = useRef(null);
-  useEffect(() => {
-    if (audio2.current) {
-      audio2.current.muted = false;
-      audio2.current.play();
-    }
-    if (audio.current) {
-      audio.current.muted = false;
-    }
-  }, []);
   const navigate = useNavigate();
   const heroes = useRouteLoaderData("app");
   const [timer, setTimer] = useState(30);
@@ -35,14 +26,19 @@ function BombPage() {
   useEffect(() => {
     setProgressLife(0);
     setProgressLife2(0);
-  }, []);
+    if (audio2.current) {
+      audio2.current.muted = false;
+      audio2.current.play();
+    }
+  }, [audio2]);
 
   const [disabledCounter, setDisabledCounter] = useState(false);
 
   const handleBomb = () => {
     setDisabledCounter(true);
     const myInterval = setInterval(() => {
-      if (audio.current != null) {
+      if (audio.current) {
+        audio.current.muted = false;
         audio.current.play();
       }
       setTimer((oldValue) => {
@@ -95,11 +91,16 @@ function BombPage() {
 
       <audio ref={audio2} muted>
         <track kind="captions" />
-        <source src="/sons/Mission-Impossible.mp3.mp3" type="audio/mp3" />
+        <source src="/sons/Mission-Impossible.mp3" type="audio/mp3" />
       </audio>
       <h1 className="titlePageBomb">Defuse The Bomb</h1>
       <div className="containerTimer">
-        <button type="button" className="timer" onClick={handleBomb}>
+        <button
+          type="button"
+          className="timer"
+          onClick={handleBomb}
+          aria-label="button"
+        />
         <button
           type="button"
           className="timer"
