@@ -83,14 +83,15 @@ function BombPage() {
         <track kind="captions" />
         <source src="/sons/tic-tac.mp3" type="audio/mp3" />
       </audio>
-
-      <div className="bombPageUp">
-        <h1 className="titlePageBomb">Defuse The Bomb</h1>
+      <h1 className="titlePageBomb">Defuse The Bomb</h1>
+      <div className="containerTimer">
         <button type="button" className="timer" onClick={handleBomb}>
-          {timer}
+          <img src="./public/images/runbomb.png" alt="" />
+          <div className="test">{timer}</div>
         </button>
-        <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />
       </div>
+
+      <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />
       <div className="mainContainer">
         <div className="concurentContainer">
           <img className="bombCard1" src={selectHero1} alt="1" />

@@ -1,5 +1,5 @@
 .BombPage {
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
   background-image: url("./images/runbackground.png");
   background-repeat: no-repeat;
@@ -7,11 +7,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
+  .containerTimer {
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .timer {
+      background-color: transparent;
+      border: none;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .test {
+      position: absolute;
+      font-size: 50px;
+    }
+  }
 
   .titlePageBomb {
     text-align: center;
-    height: 50%;
+    height: 10%;
+    font-size: 50px;
+    padding-top: 0%;
   }
 
   .largeBox {
@@ -56,6 +81,27 @@
     }
   }
 
+  .inlineDiv {
+    height: 44.5vh;
+    border-radius: 15px;
+    background-color: rgb(39, 35, 35);
+  }
+  .ContainerImageBomb {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("./public/images/runbomb.png");
+    top: 10%;
+    height: 30vh;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    margin-bottom: 30%;
+    overflow: hidden;
+  }
+
   .mainContainer {
     width: 100vw;
     display: flex;
@@ -72,5 +118,57 @@
     background-color: aliceblue;
     border-radius: 20px;
     width: 100%;
+  }
+
+  .nameHero {
+    color: white;
+  }
+
+  .nameEnemy {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .BombPage {
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("./public/images/runbackground.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .titlePageBomb {
+      font-size: 40px;
+    }
+
+    .containerTimer {
+      background-repeat: no-repeat;
+      text-align: center;
+      font-size: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .timer {
+        background-color: transparent;
+        border: none;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .test {
+        position: absolute;
+        font-size: 30px;
+      }
+
+      .concurentContainer {
+      }
+    }
   }
 }
