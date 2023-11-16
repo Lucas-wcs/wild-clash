@@ -6,6 +6,8 @@ import HealthBar from "../components/HealthBar";
 function RunPage() {
   const {
     saveWinner,
+    saveLoser,
+    setSaveLoser,
     setSaveWinner,
     selectHero1,
     selectHero2,
@@ -47,17 +49,6 @@ function RunPage() {
     fighter1Stat = parseInt(hero1.data.powerstats.speed, 10);
     fighter2Stat = parseInt(hero2.data.powerstats.speed, 10);
   }
-  useEffect(() => {
-    if (fighter1Stat > fighter2Stat) {
-      if (saveWinner === 1) {
-        setSaveWinner(2);
-      } else if (saveWinner === 2) {
-        setSaveWinner(3);
-      } else {
-        setSaveWinner(1);
-      }
-    }
-  }, []);
 
   const handleRun = () => {
     setDesactivateButton(true);
@@ -67,26 +58,45 @@ function RunPage() {
       setProgressLife2(80);
       setAnimationRun("animationRun");
       setAnimationRun2("animationRun2");
-
-      setTimeout(() => {
-        if (saveWinner >= 2) {
+      if (saveWinner === 1) {
+        setSaveWinner(2);
+        setTimeout(() => {
           navigate("/winner");
-        } else {
+        }, 4000);
+      } else if (saveWinner === 2) {
+        setSaveWinner(3);
+        setTimeout(() => {
+          navigate("/winner");
+        }, 4000);
+      } else {
+        setSaveWinner(1);
+        setTimeout(() => {
           navigate("/loser");
-        }
-      }, 2500);
+        }, 4000);
+      }
     } else {
       setProgressLife2(100);
       setProgressLife(80);
       setAnimationRun("animationUpRun2");
       setAnimationRun2("animationUpRun");
-      setTimeout(() => {
-        if (saveWinner >= 2) {
-          navigate("/winner");
-        } else {
+      setProgressLife2(100);
+      setProgressLife(Math.random() * 100);
+      if (saveLoser === 2) {
+        setSaveLoser(3);
+        setTimeout(() => {
           navigate("/loser");
-        }
-      }, 2500);
+        }, 4000);
+      } else if (saveLoser === 1) {
+        setSaveLoser(2);
+        setTimeout(() => {
+          navigate("/loser");
+        }, 4000);
+      } else {
+        setSaveLoser(1);
+        setTimeout(() => {
+          navigate("/winner");
+        }, 4000);
+      }
     }
   };
   let content = null;
