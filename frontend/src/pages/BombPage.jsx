@@ -31,7 +31,10 @@ function BombPage() {
     setProgressLife2(0);
   }, []);
 
+  const [disabledCounter, setDisabledCounter] = useState(false);
+
   const handleBomb = () => {
+    setDisabledCounter(true);
     const myInterval = setInterval(() => {
       if (audio.current != null) {
         audio.current.play();
@@ -85,7 +88,12 @@ function BombPage() {
       </audio>
       <h1 className="titlePageBomb">Defuse The Bomb</h1>
       <div className="containerTimer">
-        <button type="button" className="timer" onClick={handleBomb}>
+        <button
+          type="button"
+          className="timer"
+          onClick={handleBomb}
+          disabled={disabledCounter}
+        >
           <img src="./public/images/runbomb.png" alt="" />
           <div className="test">{timer}</div>
         </button>

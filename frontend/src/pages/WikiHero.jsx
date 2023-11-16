@@ -90,7 +90,20 @@ function WikiHero() {
               search.data.name.toLowerCase().includes(searchHero.toLowerCase())
             )
             .map((filtered) => (
-              <Card key={filtered.data.name} hero={filtered} />
+              <Card
+                key={filtered.data.name}
+                name={filtered.data.name}
+                url={filtered.data.image.url}
+                fullname={filtered.data.biography["full-name"]}
+                aliases={filtered.data.biography.aliases[0]}
+                birth={filtered.data.biography["place-of-birth"]}
+                intelligence={filtered.data.powerstats.intelligence}
+                durability={filtered.data.powerstats.durability}
+                strength={filtered.data.powerstats.strength}
+                power={filtered.data.powerstats.power}
+                speed={filtered.data.powerstats.speed}
+                combat={filtered.data.powerstats.combat}
+              />
             ))}
       </Carousel>
     </div>
