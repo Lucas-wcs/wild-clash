@@ -1,12 +1,13 @@
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PropTypes } from "prop-types";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import HeroesCard from "../components/HeroesCard";
 import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function ChooseFighter() {
   const { selectHero1, setSelectHero1, selectHero2, setSelectHero2 } =
     useContext(HeroLoaderContext);
+  const audio = useRef(null);
 
   const allHeroes = useRouteLoaderData("app");
   const navigate = useNavigate();
@@ -16,6 +17,8 @@ function ChooseFighter() {
   const [heroName1, setHeroName1] = useState("");
   const [heroName2, setHeroName2] = useState("");
   useEffect(() => {
+    audio.current.muted = false;
+    audio.current.play();
     const hero1 = allHeroes.find((hero) => hero.data.image.url === selectHero1);
     const hero2 = allHeroes.find((hero) => hero.data.image.url === selectHero2);
     if (hero1) {
@@ -50,6 +53,10 @@ function ChooseFighter() {
 
   return (
     <div className="ChooseFighter">
+      <audio className="epicIntro" ref={audio} muted>
+        <track kind="captions" />
+        <source src="/sons/epic-extreme-short-109130.mp3" type="audio/mp3" />
+      </audio>
       <h1 className="titlePage">{changeTitle()}</h1>
       <div className="BoxParent">
         <div className="fighterContainer">
