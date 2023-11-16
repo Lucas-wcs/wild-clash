@@ -1,8 +1,10 @@
 import React, { useState, useRef } from "react";
 import LaunchButton from "../components/LaunchButton";
 import WikiButton from "../components/WikiButton";
+import Modal from "../components/Modal";
 
 function Home() {
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenCurtain, setIsOpenCurtain] = useState(false);
   const [isFlash, setIsFlash] = useState("");
   const audio = useRef(null);
@@ -18,6 +20,14 @@ function Home() {
       audio.current.play();
     }, 1000);
   }
+  function handleModal() {
+    if (isOpenModal) {
+      setIsOpenModal((current) => !current);
+    } else {
+      setIsOpenModal((current) => !current);
+    }
+  }
+
   return (
     <div className={`home ${isFlash}`}>
       <div className="curtain">
@@ -66,6 +76,12 @@ function Home() {
         />
         <LaunchButton className="launchbutton" />
         <WikiButton className="wikiButton" />
+
+        <button type="button" className="buttonParametre" onClick={handleModal}>
+          Settings
+        </button>
+
+        <Modal handleModal={() => handleModal()} isOpenModal={isOpenModal} />
       </div>
     </div>
   );
