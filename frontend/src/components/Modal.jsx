@@ -44,7 +44,7 @@ function Modal({ isOpenModal, handleModal }) {
   );
 }
 Modal.propTypes = {
-  isOpenModal: PropTypes.string.isRequired,
-  handleModal: PropTypes.string.isRequired,
+  isOpenModal: PropTypes.bool.isRequired,
+  handleModal: PropTypes.func.isRequired,
 };
 export default Modal;
