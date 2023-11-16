@@ -6,6 +6,8 @@ import HealthBar from "../components/HealthBar";
 function BombPage() {
   const {
     saveWinner,
+    setSaveLoser,
+    saveLoser,
     setSaveWinner,
     selectHero1,
     selectHero2,
@@ -19,7 +21,7 @@ function BombPage() {
   }, [audio]);
   const navigate = useNavigate();
   const heroes = useRouteLoaderData("app");
-  const [timer, setTimer] = useState(10);
+  const [timer, setTimer] = useState(30);
 
   let fighter1Stat = "";
   let fighter2Stat = "";
@@ -31,14 +33,16 @@ function BombPage() {
 
   const handleBomb = () => {
     const myInterval = setInterval(() => {
-      audio.current.play();
+      if (audio.current != null) {
+        audio.current.play();
+      }
       setTimer((oldValue) => {
         if (oldValue === 1) {
           clearInterval(myInterval);
         }
         return oldValue - 1;
       });
-    }, 1000);
+    }, 200);
 
     const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
     const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
@@ -58,13 +62,18 @@ function BombPage() {
       }
       setTimeout(() => {
         navigate("/runpage");
-      }, 10000);
+      }, 4500);
     } else {
+      if (saveLoser === 1) {
+        setSaveLoser(2);
+      } else {
+        setSaveLoser(1);
+      }
       setProgressLife2(100);
       setProgressLife(Math.random() * 100);
       setTimeout(() => {
         navigate("/runpage");
-      }, 10000);
+      }, 4500);
     }
   };
 

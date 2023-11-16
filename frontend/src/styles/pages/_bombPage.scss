@@ -1,7 +1,7 @@
 .BombPage {
   height: 100vh;
   overflow: hidden;
-  background-image: url("./public/images/runbackground.png");
+  background-image: url("./images/runbackground.png");
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
@@ -54,19 +54,20 @@
     border: 5px solid transparent;
     width: 15vw;
     border-radius: 15px;
+    object-fit: contain;
     background: linear-gradient(var(--hero-color), var(--vilain-color))
       border-box;
     animation: zoom-in-zoom-out 2s ease infinite;
   }
-  .secondConcurentContainer {
-    height: 46vh;
-    width: 15vw;
-    border: 5px solid transparent;
-    border-radius: 15px;
-    background: linear-gradient(var(--hero-color), var(--vilain-color))
-      border-box;
-    animation: zoom-in-zoom-out 2s ease infinite;
-  }
+  // .secondConcurentContainer {
+  //   height: 46vh;
+  //   width: 15vw;
+  //   border: 5px solid transparent;
+  //   border-radius: 15px;
+  //   background: linear-gradient(var(--hero-color), var(--vilain-color))
+  //     border-box;
+  //   animation: zoom-in-zoom-out 2s ease infinite;
+  // }
 
   @keyframes zoom-in-zoom-out {
     0% {
