@@ -4,8 +4,10 @@ import { PropTypes } from "prop-types";
 import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function FightButton({ selectHero1, selectHero2 }) {
+
   const audio = useRef(null);
-  const { setProgressLife2, setProgressLife, setSaveWinner } =
+  const { setProgressLife2, setProgressLife, setSaveWinner, setSaveLoser } =
+
     useContext(HeroLoaderContext);
   const heroes = useRouteLoaderData("app");
   const navigate = useNavigate();
@@ -39,6 +41,7 @@ function FightButton({ selectHero1, selectHero2 }) {
         navigate("/bombpage");
       }, 3000);
     } else {
+      setSaveLoser(1);
       setProgressLife2(Math.random() * 100);
       setProgressLife(0);
       setAnimationFight("animationDefeatL");

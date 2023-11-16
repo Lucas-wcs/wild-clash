@@ -6,6 +6,8 @@ import HealthBar from "../components/HealthBar";
 function BombPage() {
   const {
     saveWinner,
+    setSaveLoser,
+    saveLoser,
     setSaveWinner,
     selectHero1,
     selectHero2,
@@ -25,7 +27,7 @@ function BombPage() {
   }, []);
   const navigate = useNavigate();
   const heroes = useRouteLoaderData("app");
-  const [timer, setTimer] = useState(10);
+  const [timer, setTimer] = useState(30);
 
   let fighter1Stat = "";
   let fighter2Stat = "";
@@ -37,14 +39,16 @@ function BombPage() {
 
   const handleBomb = () => {
     const myInterval = setInterval(() => {
-      audio.current.play();
+      if (audio.current != null) {
+        audio.current.play();
+      }
       setTimer((oldValue) => {
         if (oldValue === 1) {
           clearInterval(myInterval);
         }
         return oldValue - 1;
       });
-    }, 1000);
+    }, 200);
 
     const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
     const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
@@ -64,13 +68,18 @@ function BombPage() {
       }
       setTimeout(() => {
         navigate("/runpage");
-      }, 10000);
+      }, 4500);
     } else {
+      if (saveLoser === 1) {
+        setSaveLoser(2);
+      } else {
+        setSaveLoser(1);
+      }
       setProgressLife2(100);
       setProgressLife(Math.random() * 100);
       setTimeout(() => {
         navigate("/runpage");
-      }, 10000);
+      }, 4500);
     }
   };
 
@@ -80,18 +89,21 @@ function BombPage() {
         <track kind="captions" />
         <source src="/sons/tic-tac.mp3" type="audio/mp3" />
       </audio>
+
       <audio ref={audio2} muted>
         <track kind="captions" />
         <source src="/sons/Mission-Impossible.mp3.mp3" type="audio/mp3" />
       </audio>
+      <h1 className="titlePageBomb">Defuse The Bomb</h1>
+      <div className="containerTimer">
 
-      <div className="bombPageUp">
-        <h1 className="titlePageBomb">Defuse The Bomb</h1>
         <button type="button" className="timer" onClick={handleBomb}>
-          {timer}
+          <img src="./public/images/runbomb.png" alt="" />
+          <div className="test">{timer}</div>
         </button>
-        <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />
       </div>
+
+      <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />
       <div className="mainContainer">
         <div className="concurentContainer">
           <img className="bombCard1" src={selectHero1} alt="1" />

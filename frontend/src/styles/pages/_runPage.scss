@@ -1,6 +1,6 @@
 .run {
   position: relative;
-  background-image: url("./public/images/RunPage.png");
+  background-image: url("./images/RunPage.png");
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -64,10 +64,10 @@
   position: absolute;
   bottom: 5%;
   left: 5%;
-  background-color: aliceblue;
   border-radius: 20px;
   height: 25%;
-  border: 5px solid black;
+  background: linear-gradient(var(--hero-color), var(--vilain-color)) border-box;
+  border: 5px solid transparent;
   transform: rotate(75deg);
 }
 
@@ -75,10 +75,11 @@
   position: absolute;
   bottom: 2%;
   left: 15%;
-  background-color: aliceblue;
   border-radius: 20px;
   height: 25%;
   border: 5px solid black;
+  background: linear-gradient(var(--hero-color), var(--vilain-color)) border-box;
+  border: 5px solid transparent;
   transform: rotate(75deg);
 }
 
@@ -101,7 +102,7 @@
 
 .animationRun {
   animation-name: run1;
-  animation-duration: 2.5s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
 }
 
@@ -136,7 +137,7 @@
 }
 .animationRun2 {
   animation-name: run2;
-  animation-duration: 2.5s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
 }
 
@@ -165,7 +166,7 @@
 }
 .animationUpRun {
   animation-name: runUp1;
-  animation-duration: 2.5s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
 }
 
@@ -173,26 +174,29 @@
   0% {
     transform: translate(0px, 0px);
   }
-  15% {
+  10% {
     transform: rotate(10deg) translate(5vw, -5vw);
   }
-  25% {
+  20% {
     transform: translate(10vw, 0);
   }
-  40% {
+  30% {
     transform: rotate(10deg) translate(15vw, -5vw);
   }
-  50% {
+  40% {
     transform: translate(20vw, 0);
   }
-  60% {
+  50% {
     transform: rotate(10deg) translate(25vw, -10vw);
   }
-  70% {
+  60% {
     transform: translate(30vw, 0);
   }
-  80% {
+  70% {
     transform: rotate(10deg) translate(50vw, -20vw);
+  }
+  80% {
+    transform: translate(70vw, 0);
   }
   100% {
     transform: translate(70vw, 0);
@@ -200,7 +204,7 @@
 }
 .animationUpRun2 {
   animation-name: runUp2;
-  animation-duration: 2.5s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
 }
 
@@ -208,22 +212,55 @@
   0% {
     transform: translate(0px, 0px);
   }
-  15% {
+  10% {
     transform: rotate(10deg) translate(12vw, -5vw);
   }
-  25% {
+  20% {
     transform: translate(25vw, 0);
   }
-  40% {
+  30% {
     transform: rotate(10deg) translate(35vw, -5vw);
   }
-  50% {
+  40% {
     transform: translate(40vw, 0);
   }
-  65% {
+  50% {
     transform: rotate(90deg) translate(3vw, -45vw);
+  }
+  85% {
+    transform: rotate(90deg) translate(3vw, -55vw);
   }
   100% {
     transform: rotate(90deg) translate(3vw, -55vw);
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .runTitle {
+    top: 8%;
+  }
+
+  .runContainer {
+    padding-top: 5%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .run {
+    .runTitle {
+      font-size: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .run {
+    .runTitle {
+      font-size: 15px;
+      top: 10%;
+    }
+  }
+  .runContainer {
+    padding-top: 10%;
   }
 }

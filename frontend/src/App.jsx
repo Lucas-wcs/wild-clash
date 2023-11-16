@@ -10,11 +10,14 @@ function App() {
   const [selectHero1, setSelectHero1] = useState("");
   const [selectHero2, setSelectHero2] = useState("");
   const [saveWinner, setSaveWinner] = useState(0);
+  const [saveLoser, setSaveLoser] = useState(0);
   const [progressLife, setProgressLife] = useState(0);
   const [progressLife2, setProgressLife2] = useState(0);
 
   const valueOfContext = useMemo(() => {
     return {
+      saveLoser,
+      setSaveLoser,
       selectHero1,
       setSelectHero1,
       selectHero2,
@@ -27,6 +30,8 @@ function App() {
       setProgressLife2,
     };
   }, [
+    saveLoser,
+    setSaveLoser,
     selectHero1,
     selectHero2,
     setSelectHero1,
