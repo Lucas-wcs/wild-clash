@@ -234,3 +234,33 @@
     transform: rotate(90deg) translate(3vw, -55vw);
   }
 }
+
+@media screen and (max-width: 950px) {
+  .runTitle {
+    top: 8%;
+  }
+
+  .runContainer {
+    padding-top: 5%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .run {
+    .runTitle {
+      font-size: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .run {
+    .runTitle {
+      font-size: 15px;
+      top: 10%;
+    }
+  }
+  .runContainer {
+    padding-top: 10%;
+  }
+}
