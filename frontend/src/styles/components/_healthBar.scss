@@ -3,13 +3,6 @@
   flex-direction: column;
   justify-content: space-around;
 
-  .namePlayers {
-    display: flex;
-    justify-content: space-around;
-    color: white;
-    font-size: 3vw;
-  }
-
   .healthBar2players {
     display: flex;
     justify-content: space-around;
@@ -66,5 +59,12 @@
 
   .medaille {
     width: 20px;
+  }
+  .namePlayers {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 3vw;
+    width: 100vw;
   }
 }
