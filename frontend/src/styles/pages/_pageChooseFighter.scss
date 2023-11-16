@@ -69,10 +69,6 @@
     pointer-events: none;
   }
 
-  .boxSelected {
-    width: 240px;
-  }
-
   img {
     border-radius: 20px;
     cursor: pointer;
@@ -85,11 +81,12 @@
   }
 
   .boxSelected {
+    width: 17vw;
     border: 5px solid transparent;
     background: linear-gradient(var(--hero-color), var(--vilain-color))
       border-box;
-    height: 46vh;
     border-radius: 15px;
+    object-fit: contain;
   }
   .inlineDiv {
     height: 44.5vh;
