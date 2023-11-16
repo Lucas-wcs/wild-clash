@@ -1,16 +1,50 @@
 .BombPage {
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
-  background-image: url("./public/images/runbackground.png");
+  background-image: url("./images/runbackground.png");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover; /* Changed from '100%' to 'cover' for better scaling */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
+  .containerTimer {
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .timer {
+      background-color: transparent;
+      border: none;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        height: 30vh;
+      }
+    }
+
+    .test {
+      position: absolute;
+      font-size: 70px;
+    }
+  }
+
+  .namePlayers {
+    gap: 40%;
+  }
+
   .titlePageBomb {
     text-align: center;
-    height: 50%;
+    height: 10%;
+    font-size: 4.5vw; /* Adjusted font size to be responsive */
+    padding-top: 0%;
   }
 
   .largeBox {
@@ -28,19 +62,20 @@
     border: 5px solid transparent;
     width: 15vw;
     border-radius: 15px;
+    object-fit: contain;
     background: linear-gradient(var(--hero-color), var(--vilain-color))
       border-box;
     animation: zoom-in-zoom-out 2s ease infinite;
   }
-  .secondConcurentContainer {
-    height: 46vh;
-    width: 15vw;
-    border: 5px solid transparent;
-    border-radius: 15px;
-    background: linear-gradient(var(--hero-color), var(--vilain-color))
-      border-box;
-    animation: zoom-in-zoom-out 2s ease infinite;
-  }
+  // .secondConcurentContainer {
+  //   height: 46vh;
+  //   width: 15vw;
+  //   border: 5px solid transparent;
+  //   border-radius: 15px;
+  //   background: linear-gradient(var(--hero-color), var(--vilain-color))
+  //     border-box;
+  //   animation: zoom-in-zoom-out 2s ease infinite;
+  // }
 
   @keyframes zoom-in-zoom-out {
     0% {
@@ -52,6 +87,26 @@
     100% {
       transform: scale(1.1);
     }
+  }
+
+  .inlineDiv {
+    height: 44.5vh;
+    border-radius: 15px;
+    background-color: rgb(39, 35, 35);
+  }
+  .ContainerImageBomb {
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 10%;
+    height: 30vh;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    margin-bottom: 30%;
+    overflow: hidden;
   }
 
   .mainContainer {
@@ -70,5 +125,54 @@
     background-color: aliceblue;
     border-radius: 20px;
     width: 100%;
+  }
+
+  .nameHero {
+    color: white;
+  }
+
+  .nameEnemy {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .BombPage {
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("./public/images/runbackground.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .titlePageBomb {
+      font-size: 40px;
+    }
+
+    .containerTimer {
+      background-repeat: no-repeat;
+      text-align: center;
+      font-size: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .timer {
+        background-color: transparent;
+        border: none;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .test {
+        position: absolute;
+        font-size: 2.5vw;
+      }
+    }
   }
 }
