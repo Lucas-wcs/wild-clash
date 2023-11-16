@@ -7,9 +7,14 @@ function Home() {
   const [isFlash, setIsFlash] = useState("");
   const audio = useRef(null);
   const button = useRef(null);
+  const audio2 = useRef(null);
 
   function handleCurtain() {
     setIsOpenCurtain(!isOpenCurtain);
+    if (audio2.current != null) {
+      audio2.current.muted = false;
+      audio2.current.play();
+    }
     setTimeout(() => {
       setIsFlash("flash");
     }, 500);
@@ -44,6 +49,13 @@ function Home() {
           }`}
         >
           <button type="button" onClick={handleCurtain} className="logo-2">
+            <audio className="shutters" ref={audio2} muted>
+              <track kind="captions" />
+              <source
+                src="/sons/metal-shutter-64688_pzt8IXs8.mp3"
+                type="audio/mp3"
+              />
+            </audio>
             <audio className="storm" ref={audio} muted>
               <track kind="captions" />
               <source src="/sons/tonnerre.mp3" type="audio/mp3" />

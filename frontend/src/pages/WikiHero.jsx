@@ -27,6 +27,8 @@ function WikiHero() {
 
   const [searchHero, setSearchHero] = useState("");
   const [alignmentHero, setAlignmentHero] = useState("");
+  const [selectedFilterGood, setSelectedFilterGood] = useState("");
+  const [selectedFilterBad, setSelectedFilterBad] = useState("");
 
   const handleSearchHero = (event) => {
     const search = event.target.value;
@@ -34,16 +36,20 @@ function WikiHero() {
   };
 
   const handleFilterGood = () => {
+    setSelectedFilterGood("filterGood");
     if (alignmentHero === "good") {
       setAlignmentHero("");
+      setSelectedFilterGood("");
     } else {
       setAlignmentHero("good");
     }
   };
 
   const handleFilterBad = () => {
+    setSelectedFilterBad("filterBad");
     if (alignmentHero === "bad") {
       setAlignmentHero("");
+      setSelectedFilterBad("");
     } else {
       setAlignmentHero("bad");
     }
@@ -53,6 +59,7 @@ function WikiHero() {
     <div className="wikiHero">
       <div className="wikiFilters">
         <img
+          className={`${selectedFilterGood}`}
           src="/images/filterHeroes.png"
           alt="filtre Heroes"
           onClick={handleFilterGood}
@@ -65,6 +72,7 @@ function WikiHero() {
           onChange={handleSearchHero}
         />
         <img
+          className={`${selectedFilterBad}`}
           src="/images/filterVilain.png"
           alt="filtre Bad Guys"
           onClick={handleFilterBad}

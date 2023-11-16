@@ -12,11 +12,17 @@ function BombPage() {
     setProgressLife,
     setProgressLife2,
   } = useContext(HeroLoaderContext);
-
   const audio = useRef(null);
+  const audio2 = useRef(null);
   useEffect(() => {
-    audio.current.muted = false;
-  }, [audio]);
+    if (audio2.current) {
+      audio2.current.muted = false;
+      audio2.current.play();
+    }
+    if (audio.current) {
+      audio.current.muted = false;
+    }
+  }, []);
   const navigate = useNavigate();
   const heroes = useRouteLoaderData("app");
   const [timer, setTimer] = useState(10);
@@ -73,6 +79,10 @@ function BombPage() {
       <audio ref={audio} muted>
         <track kind="captions" />
         <source src="/sons/tic-tac.mp3" type="audio/mp3" />
+      </audio>
+      <audio ref={audio2} muted>
+        <track kind="captions" />
+        <source src="/sons/Mission-Impossible.mp3.mp3" type="audio/mp3" />
       </audio>
 
       <div className="bombPageUp">
