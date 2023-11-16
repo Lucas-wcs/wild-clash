@@ -1,11 +1,18 @@
 import { useRouteLoaderData } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from "../components/Card";
 
 function WikiHero() {
   const allHeroes = useRouteLoaderData("app");
+  const audio = useRef(null);
+  useEffect(() => {
+    if (audio.current) {
+      audio.current.muted = false;
+      audio.current.play();
+    }
+  }, []);
 
   const responsive = {
     desktop: {
@@ -57,6 +64,13 @@ function WikiHero() {
 
   return (
     <div className="wikiHero">
+      <audio ref={audio} loop muted>
+        <track kind="captions" />
+        <source
+          src="public/sons/elevator-music-bossa-nova-background-music-version-60s-10900.mp3"
+          type="audio/mp3"
+        />
+      </audio>
       <div className="wikiFilters">
         <img
           className={`${selectedFilterGood}`}
