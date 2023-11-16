@@ -99,7 +99,12 @@ function BombPage() {
       </audio>
       <h1 className="titlePageBomb">Defuse The Bomb</h1>
       <div className="containerTimer">
-        <button type="button" className="timer" onClick={handleBomb}>
+        <button
+          type="button"
+          className="timer"
+          onClick={handleBomb}
+          aria-label="button"
+        />
         <button
           type="button"
           className="timer"
