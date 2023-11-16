@@ -1,10 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function FightButton({ selectHero1, selectHero2 }) {
+
+  const audio = useRef(null);
   const { setProgressLife2, setProgressLife, setSaveWinner, setSaveLoser } =
+
     useContext(HeroLoaderContext);
   const heroes = useRouteLoaderData("app");
   const navigate = useNavigate();
@@ -18,6 +21,11 @@ function FightButton({ selectHero1, selectHero2 }) {
     setDesactivateButton(true);
     const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
     const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
+    setTimeout(() => {
+      audio.current.muted = false;
+      audio.current.play();
+    }, 700);
+
     if (hero1 && hero2) {
       fighter1Stat = parseInt(hero1.data.powerstats.strength, 10);
       fighter2Stat = parseInt(hero2.data.powerstats.strength, 10);
@@ -75,6 +83,10 @@ function FightButton({ selectHero1, selectHero2 }) {
 
   return (
     <div className="buttonFightTimer">
+      <audio ref={audio} muted>
+        <track kind="captions" />
+        <source src="public\sons\se_common_finishhit.mp3" type="audio/mp3" />
+      </audio>
       <div className="fightButton">
         <div>
           <img
