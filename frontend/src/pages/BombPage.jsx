@@ -93,7 +93,14 @@ function BombPage() {
         <track kind="captions" />
         <source src="/sons/Mission-Impossible.mp3" type="audio/mp3" />
       </audio>
-      <h1 className="titlePageBomb">Defuse The Bomb</h1>
+      <div className="logoBox">
+        <p>2nd Trial : DEFUSE !</p>
+        <img
+          className="logoFight"
+          src="/images/logo_projet2.png"
+          alt="Logo Clash Heroes"
+        />
+      </div>
       <div className="containerTimer">
         <button
           type="button"

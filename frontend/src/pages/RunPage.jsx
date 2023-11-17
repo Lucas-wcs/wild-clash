@@ -128,7 +128,14 @@ function RunPage() {
         />
       </audio>
       <div className="runContainer">
-        <p className="runTitle">3rd Trial : ESCAPE !</p>
+        <div className="logoBox">
+          <p>3rd Trial : ESCAPE !</p>
+          <img
+            className="logoFight"
+            src="/images/logo_projet2.png"
+            alt="Logo Clash Heroes"
+          />
+        </div>
         <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />
         {content}
       </div>

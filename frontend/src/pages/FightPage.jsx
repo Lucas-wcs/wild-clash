@@ -24,6 +24,7 @@ function FightPage() {
         />
       </audio>
       <div className="logoBox">
+        <p>1st Trial : RUMBLE !</p>
         <img
           className="logoFight"
           src="/images/logo_projet2.png"
