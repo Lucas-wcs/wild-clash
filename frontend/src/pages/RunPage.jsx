@@ -23,6 +23,7 @@ function RunPage() {
   let fighter2Stat = "";
 
   const audio = useRef(null);
+  const audio2 = useRef(null);
 
   useEffect(() => {
     setProgressLife(0);
@@ -31,6 +32,12 @@ function RunPage() {
       audio.current.muted = false;
       audio.current.play();
     }
+    setTimeout(() => {
+      if (audio2.current) {
+        audio2.current.muted = false;
+        audio2.current.play();
+      }
+    }, 3500);
   }, []);
 
   const [animationRun, setAnimationRun] = useState("");
@@ -123,9 +130,13 @@ function RunPage() {
       <audio ref={audio} muted>
         <track kind="captions" />
         <source
-          src="public/sons/3-2-1-go!-smash-ultimate-made-with-Voicemod-technology.mp3"
+          src="/sons/3-2-1-go!-smash-ultimate-made-with-Voicemod-technology.mp3"
           type="audio/mp3"
         />
+      </audio>
+      <audio ref={audio2} muted>
+        <track kind="captions" />
+        <source src="/sons/Deja_vu.mp3" type="audio/mp3" />
       </audio>
       <div className="runContainer">
         <div className="logoBox">

@@ -36,7 +36,7 @@ function FightButton({ selectHero1, selectHero2 }) {
       setAnimationFight2("animationDefeatR");
       setSaveWinner(1);
       setTimeout(() => {
-        navigate("/bombpage");
+        navigate("/defuse");
       }, 3000);
     } else {
       setSaveLoser(1);
@@ -45,7 +45,7 @@ function FightButton({ selectHero1, selectHero2 }) {
       setAnimationFight("animationDefeatL");
       setAnimationFight2("animationWinR");
       setTimeout(() => {
-        navigate("/bombpage");
+        navigate("/defuse");
       }, 3000);
     }
   };
@@ -83,7 +83,7 @@ function FightButton({ selectHero1, selectHero2 }) {
     <div className="buttonFightTimer">
       <audio ref={audio} muted>
         <track kind="captions" />
-        <source src="public\sons\se_common_finishhit.mp3" type="audio/mp3" />
+        <source src="/sons/se_common_finishhit.mp3" type="audio/mp3" />
       </audio>
       <div className="fightButton">
         <div>

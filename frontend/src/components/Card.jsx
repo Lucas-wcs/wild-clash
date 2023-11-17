@@ -32,7 +32,7 @@ function Card({
     <div className="card">
       <audio ref={audio} muted>
         <track kind="captions" />
-        <source src="public/sons/flipcard-91468.mp3" type="audio/mp3" />
+        <source src="/sons/flipcard-91468.mp3" type="audio/mp3" />
       </audio>
       <ReactCardFlip
         isFlipped={isFlipped}
