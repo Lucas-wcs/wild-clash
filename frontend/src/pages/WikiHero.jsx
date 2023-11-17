@@ -47,8 +47,10 @@ function WikiHero() {
     if (alignmentHero === "good") {
       setAlignmentHero("");
       setSelectedFilterGood("");
+      setSelectedFilterBad("");
     } else {
       setAlignmentHero("good");
+      setSelectedFilterBad("");
     }
   };
 
@@ -57,8 +59,10 @@ function WikiHero() {
     if (alignmentHero === "bad") {
       setAlignmentHero("");
       setSelectedFilterBad("");
+      setSelectedFilterGood("");
     } else {
       setAlignmentHero("bad");
+      setSelectedFilterGood("");
     }
   };
 
