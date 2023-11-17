@@ -67,7 +67,7 @@ function WikiHero() {
       <audio ref={audio} loop muted>
         <track kind="captions" />
         <source
-          src="public/sons/elevator-music-bossa-nova-background-music-version-60s-10900.mp3"
+          src="/sons/elevator-music-bossa-nova-background-music-version-60s-10900.mp3"
           type="audio/mp3"
         />
       </audio>

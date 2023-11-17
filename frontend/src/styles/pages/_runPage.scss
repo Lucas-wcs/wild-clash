@@ -16,11 +16,13 @@
     display: flex;
     justify-content: center;
     font-size: 3.5vw;
+
     padding-bottom: 5vh;
     p {
       color: white;
       position: absolute;
       left: 30vw;
+
       text-shadow: 5px 5px 2px black;
       text-decoration: overline;
     }
@@ -32,6 +34,7 @@
     left: 12px;
     width: 20vw;
   }
+
 
   .runContainer {
     display: flex;
@@ -106,7 +109,6 @@
     border: 5px solid transparent;
     transform: rotate(75deg);
   }
-
   .resultRun {
     background-color: black;
     color: white;

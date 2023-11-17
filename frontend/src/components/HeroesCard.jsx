@@ -7,7 +7,7 @@ import DisplayHero from "./DisplayHero";
 
 const responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
+    breakpoint: { max: 100000000000, min: 701 },
     items: 15,
     slidesToSlide: 6,
   },

@@ -1,6 +1,5 @@
-import React, { useState, useMemo } from "react";
-
-import { Outlet } from "react-router-dom";
+import React, { useState, useMemo, useLayoutEffect } from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import HeroLoaderContext from "./contexts/HeroLoaderContext";
 import Header from "./components/Header";
 import useScreenOrientation from "./components/useScreenOrientation";
@@ -13,6 +12,13 @@ function App() {
   const [saveLoser, setSaveLoser] = useState(0);
   const [progressLife, setProgressLife] = useState(0);
   const [progressLife2, setProgressLife2] = useState(0);
+  const location = useLocation();
+  const navigate = useNavigate();
+  useLayoutEffect(() => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
+  }, []);
 
   const valueOfContext = useMemo(() => {
     return {
