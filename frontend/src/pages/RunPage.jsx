@@ -123,7 +123,7 @@ function RunPage() {
       <audio ref={audio} muted>
         <track kind="captions" />
         <source
-          src="public/sons/3-2-1-go!-smash-ultimate-made-with-Voicemod-technology.mp3"
+          src="/sons/3-2-1-go!-smash-ultimate-made-with-Voicemod-technology.mp3"
           type="audio/mp3"
         />
       </audio>

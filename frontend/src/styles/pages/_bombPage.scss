@@ -25,6 +25,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
+      &:disabled {
+        cursor: initial;
+      }
 
       img {
         width: 25vw;
@@ -34,6 +38,7 @@
     .test {
       position: absolute;
       font-size: 70px;
+      color: white;
     }
   }
 
@@ -48,6 +53,7 @@
     font-size: 3.5vw;
     height: 20vh;
     p {
+      color: white;
       text-shadow: 5px 5px 2px black;
       text-decoration: overline;
     }
@@ -87,15 +93,6 @@
       border-box;
     animation: zoom-in-zoom-out 2s ease infinite;
   }
-  // .secondConcurentContainer {
-  //   height: 46vh;
-  //   width: 15vw;
-  //   border: 5px solid transparent;
-  //   border-radius: 15px;
-  //   background: linear-gradient(var(--hero-color), var(--vilain-color))
-  //     border-box;
-  //   animation: zoom-in-zoom-out 2s ease infinite;
-  // }
 
   @keyframes zoom-in-zoom-out {
     0% {
@@ -152,7 +149,7 @@
   .BombPage {
     height: 100vh;
     overflow: hidden;
-    background-image: url("./public/images/runbackground.png");
+    background-image: url("./images/runbackground.png");
     background-repeat: no-repeat;
     background-size: 100%;
     display: flex;
@@ -179,6 +176,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        color: white;
       }
 
       .test {

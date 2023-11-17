@@ -19,7 +19,7 @@ function FightPage() {
       <audio ref={audio} muted>
         <track kind="captions" />
         <source
-          src="public\sons\three-two-one-fight-deep-voice-38382.mp3"
+          src="/sons/three-two-one-fight-deep-voice-38382.mp3"
           type="audio/mp3"
         />
       </audio>
