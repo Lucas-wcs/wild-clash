@@ -42,7 +42,7 @@ function BombPage() {
         audio.current.play();
       }
       setTimer((oldValue) => {
-        if (oldValue === 1) {
+        if (oldValue === 17) {
           clearInterval(myInterval);
         }
         return oldValue - 1;
@@ -101,28 +101,22 @@ function BombPage() {
           alt="Logo Clash Heroes"
         />
       </div>
-      <div className="containerTimer">
-        <button
-          type="button"
-          className="timer"
-          onClick={handleBomb}
-          aria-label="button"
-        />
-        <button
-          type="button"
-          className="timer"
-          onClick={handleBomb}
-          disabled={disabledCounter}
-        >
-          <img src="./public/images/runbomb.png" alt="" />
-          <div className="test">{timer}</div>
-        </button>
-      </div>
 
       <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />
       <div className="mainContainer">
         <div className="concurentContainer">
           <img className="bombCard1" src={selectHero1} alt="1" />
+        </div>
+        <div className="containerTimer">
+          <button
+            type="button"
+            className="timer"
+            onClick={handleBomb}
+            disabled={disabledCounter}
+          >
+            <img src="./public/images/runbomb.png" alt="" />
+            <div className="test">{timer}</div>
+          </button>
         </div>
         <div className="concurentContainer">
           <img className="bombCard2" src={selectHero2} alt="2" />
