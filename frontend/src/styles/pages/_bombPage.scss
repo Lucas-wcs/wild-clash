@@ -7,15 +7,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 
   .containerTimer {
     background-repeat: no-repeat;
+    position: absolute;
     text-align: center;
     font-size: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    top: 20vh;
 
     .timer {
       background-color: transparent;
@@ -26,7 +27,7 @@
       align-items: center;
 
       img {
-        height: 30vh;
+        width: 25vw;
       }
     }
 
@@ -38,6 +39,25 @@
 
   .namePlayers {
     gap: 40%;
+  }
+
+  .logoBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5vw;
+    height: 20vh;
+    p {
+      text-shadow: 5px 5px 2px black;
+      text-decoration: overline;
+    }
+  }
+
+  .logoFight {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 20vw;
   }
 
   .titlePageBomb {
@@ -125,14 +145,6 @@
     background-color: aliceblue;
     border-radius: 20px;
     width: 100%;
-  }
-
-  .nameHero {
-    color: white;
-  }
-
-  .nameEnemy {
-    color: white;
   }
 }
 

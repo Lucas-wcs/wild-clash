@@ -15,16 +15,18 @@
   .logoBox {
     display: flex;
     justify-content: center;
+    font-size: 3.5vw;
+    p {
+      text-shadow: 5px 5px 2px black;
+      text-decoration: overline;
+    }
   }
 
   .logoFight {
-    width: 40%;
-  }
-
-  @media (max-width: 1100px) {
-    .logoFight {
-      width: 30%;
-    }
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 20vw;
   }
 }
 
