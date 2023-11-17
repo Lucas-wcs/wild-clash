@@ -24,6 +24,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
+      &:disabled {
+        cursor: initial;
+      }
 
       img {
         height: 30vh;
@@ -67,15 +71,6 @@
       border-box;
     animation: zoom-in-zoom-out 2s ease infinite;
   }
-  // .secondConcurentContainer {
-  //   height: 46vh;
-  //   width: 15vw;
-  //   border: 5px solid transparent;
-  //   border-radius: 15px;
-  //   background: linear-gradient(var(--hero-color), var(--vilain-color))
-  //     border-box;
-  //   animation: zoom-in-zoom-out 2s ease infinite;
-  // }
 
   @keyframes zoom-in-zoom-out {
     0% {
@@ -167,6 +162,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        color: white;
       }
 
       .test {
