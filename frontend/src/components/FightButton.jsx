@@ -36,7 +36,7 @@ function FightButton({ selectHero1, selectHero2 }) {
       setAnimationFight2("animationDefeatR");
       setSaveWinner(1);
       setTimeout(() => {
-        navigate("/bombpage");
+        navigate("/defuse");
       }, 3000);
     } else {
       setSaveLoser(1);
@@ -45,7 +45,7 @@ function FightButton({ selectHero1, selectHero2 }) {
       setAnimationFight("animationDefeatL");
       setAnimationFight2("animationWinR");
       setTimeout(() => {
-        navigate("/bombpage");
+        navigate("/defuse");
       }, 3000);
     }
   };

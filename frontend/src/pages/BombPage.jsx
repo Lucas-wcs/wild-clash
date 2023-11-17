@@ -66,7 +66,7 @@ function BombPage() {
         setSaveWinner(1);
       }
       setTimeout(() => {
-        navigate("/runpage");
+        navigate("/escape");
       }, 4500);
     } else {
       if (saveLoser === 1) {
@@ -77,7 +77,7 @@ function BombPage() {
       setProgressLife2(100);
       setProgressLife(Math.random() * 100);
       setTimeout(() => {
-        navigate("/runpage");
+        navigate("/escape");
       }, 4500);
     }
   };
@@ -114,7 +114,7 @@ function BombPage() {
             onClick={handleBomb}
             disabled={disabledCounter}
           >
-            <img src="./public/images/runbomb.png" alt="" />
+            <img src="./images/runbomb.png" alt="" />
             <div className="test">{timer}</div>
           </button>
         </div>
