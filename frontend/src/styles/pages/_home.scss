@@ -44,8 +44,43 @@
     }
   }
   .homelogo {
-    width: 60%;
-    transform: translateY(-30%);
+    position: absolute;
+    width: 45%;
+    top: 3%;
+  }
+  .buttonParametre {
+    position: absolute;
+    font-size: 2vw;
+    letter-spacing: 0.7px;
+    top: 60%;
+    margin: 0;
+    padding: 17px 35px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: linear-gradient(
+      330deg,
+      rgb(35, 54, 77) 0%,
+      rgba(217, 234, 241, 1) 100%
+    );
+    border-radius: 30px;
+    color: rgb(6, 35, 70);
+    font-weight: 400;
+    font-family: inherit;
+    z-index: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+    &:hover {
+      animation: storm1261 0.7s ease-in-out both;
+      animation-delay: 0.06s;
+      animation: rotate624 0.7s ease-in-out both;
+      animation-delay: 0.06s;
+    }
   }
 
   .homeButtons {
@@ -65,6 +100,7 @@
     top: 0;
     bottom: 0;
     width: 50vw;
+    max-width: 50vw;
     background-image: url("images/Battles_Iron_Man_hero_500524_1.jpg");
     background-size: cover;
     background-position: right;
@@ -74,8 +110,10 @@
       position: absolute;
       right: 0;
       top: 33%;
+      max-width: 60%;
       .logoButtonL {
         width: 100%;
+        max-height: 100vh;
       }
     }
   }
@@ -89,17 +127,20 @@
     width: 50vw;
     background-image: url("/images/Battles_Iron_Man_hero_500524_2.jpg");
     background-size: cover;
+    background-position: left;
 
     .logo-2 {
       all: unset;
       position: absolute;
       left: 0;
       top: 33%;
+      max-width: 60%;
       .storm {
         position: absolute;
       }
       .logoButtonR {
         width: 100%;
+        max-height: 100vh;
       }
     }
   }
@@ -138,10 +179,48 @@
 }
 
 @media screen and (max-width: 960px) {
-  .logo-1 {
-    all: unset;
-    position: absolute;
-    right: 0;
-    top: 33%;
+  .home {
+    .curtain-panel-right {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 50vw;
+
+      .logo-2 {
+        all: unset;
+        position: absolute;
+        left: 0;
+        top: 33%;
+        .storm {
+          position: absolute;
+        }
+        .logoButtonR {
+          width: 50%;
+        }
+      }
+    }
+
+    .curtain-panel-left {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 50vw;
+
+      .logo-1 {
+        all: unset;
+        position: absolute;
+        right: 0;
+        top: 33%;
+
+        .logoButtonL {
+          width: 50%;
+          transform: translate(100%, 0%);
+        }
+      }
+    }
   }
 }

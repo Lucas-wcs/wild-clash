@@ -1,16 +1,25 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useRef, useEffect, useContext } from "react";
+import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function WinnerPage() {
-  const location = useLocation();
-  const urlImgFighter1 = location.state.imgFighter1;
+  const {
+    selectHero1,
+    setSaveLoser,
+    setProgressLife,
+    setProgressLife2,
+    setSaveWinner,
+  } = useContext(HeroLoaderContext);
   const navigate = useNavigate();
   const audio = useRef(null);
 
   const handleNewGame = () => {
+    setProgressLife(0);
+    setProgressLife2(0);
+    setSaveWinner(0);
+    setSaveLoser(0);
     navigate("/chooseFighter");
   };
-
   useEffect(() => {
     audio.current.muted = false;
     audio.current.play();
@@ -19,14 +28,25 @@ function WinnerPage() {
   return (
     <div className="firstContainer2">
       <div className="img-winner2">
-        <img src={urlImgFighter1} alt="loser" />
+        <img src={selectHero1} alt="loser" />
       </div>
 
       <div className="secondContainer2">
         <p className="firstText2">You Lose !</p>
-        <button type="button" className="firstButton2" onClick={handleNewGame}>
-          New Game
-        </button>
+        <div
+          className="firstButton2"
+          onClick={handleNewGame}
+          role="presentation"
+        >
+          <button type="button" className="btn">
+            <span />
+            <p
+              data-start="good luck!"
+              data-text="start!"
+              data-title="new game"
+            />
+          </button>
+        </div>
       </div>
 
       <div className="logo" />

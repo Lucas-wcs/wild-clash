@@ -1,39 +1,58 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useWindowSize from "react-use/lib/useWindowSize";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
 import Confetti from "react-confetti";
+import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
 function WinnerPage() {
-  const location = useLocation();
-  const urlImgFighter1 = location.state.imgFighter1;
+  const {
+    selectHero1,
+    setSaveLoser,
+    setProgressLife,
+    setProgressLife2,
+    setSaveWinner,
+  } = useContext(HeroLoaderContext);
   const navigate = useNavigate();
 
   const handleNewGame = () => {
+    setProgressLife(0);
+    setProgressLife2(0);
+    setSaveWinner(0);
+    setSaveLoser(0);
     navigate("/chooseFighter");
   };
 
   const { width, height } = useWindowSize();
   const audio = useRef(null);
-
   useEffect(() => {
     audio.current.muted = false;
     audio.current.play();
   }, [audio]);
 
-  // const button = useRef(null);
   return (
     <div className="firstContainer">
       <Confetti width={width} height={height} />
 
       <div className="img-winner">
-        <img src={urlImgFighter1} alt="winner" />
+        <img src={selectHero1} alt="winner" />
       </div>
 
       <div className="secondContainer">
         <p className="firstText">You Win !</p>
-        <button type="button" className="firstButton" onClick={handleNewGame}>
-          New Game
-        </button>
+        <div
+          className="firstButton"
+          onClick={handleNewGame}
+          role="presentation"
+        >
+          <button type="button" className="btn">
+            <span />
+            <p
+              data-start="good luck!"
+              data-text="start!"
+              data-title="new game"
+            />
+          </button>
+        </div>
       </div>
 
       <div className="logo" />

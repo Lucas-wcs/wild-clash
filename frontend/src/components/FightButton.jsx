@@ -1,57 +1,60 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { useNavigate, useRouteLoaderData } from "react-router-dom";
 import { PropTypes } from "prop-types";
+import HeroLoaderContext from "../contexts/HeroLoaderContext";
 
-function FightButton({
-  setProgressLife2,
-  setProgressLife,
-  imgFighter1,
-  imgFighter2,
-}) {
+function FightButton({ selectHero1, selectHero2 }) {
+  const audio = useRef(null);
+  const { setProgressLife2, setProgressLife, setSaveWinner, setSaveLoser } =
+    useContext(HeroLoaderContext);
   const heroes = useRouteLoaderData("app");
   const navigate = useNavigate();
   let fighter1Stat = "";
   let fighter2Stat = "";
-
   const [animationFight, setAnimationFight] = useState("animation1");
   const [animationFight2, setAnimationFight2] = useState("animation2");
+  const [desactivateButton, setDesactivateButton] = useState(false);
 
   const handleFight = () => {
-    const hero1 = heroes.find((hero) => hero.data.image.url === imgFighter1);
-    const hero2 = heroes.find((hero) => hero.data.image.url === imgFighter2);
+    setDesactivateButton(true);
+    const hero1 = heroes.find((hero) => hero.data.image.url === selectHero1);
+    const hero2 = heroes.find((hero) => hero.data.image.url === selectHero2);
+    setTimeout(() => {
+      audio.current.muted = false;
+      audio.current.play();
+    }, 700);
+
     if (hero1 && hero2) {
       fighter1Stat = parseInt(hero1.data.powerstats.strength, 10);
       fighter2Stat = parseInt(hero2.data.powerstats.strength, 10);
     }
 
-    if (fighter1Stat > fighter2Stat) {
+    if (fighter1Stat >= fighter2Stat) {
       setProgressLife(Math.random() * 100);
       setProgressLife2(0);
       setAnimationFight("animationWinL");
       setAnimationFight2("animationDefeatR");
+      setSaveWinner(1);
       setTimeout(() => {
-        navigate("/winner", {
-          state: { imgFighter1, imgFighter2 },
-        });
+        navigate("/defuse");
       }, 3000);
     } else {
+      setSaveLoser(1);
       setProgressLife2(Math.random() * 100);
       setProgressLife(0);
       setAnimationFight("animationDefeatL");
       setAnimationFight2("animationWinR");
       setTimeout(() => {
-        navigate("/loser", {
-          state: { imgFighter1, imgFighter2 },
-        });
+        navigate("/defuse");
       }, 3000);
     }
   };
 
   const [count, setCount] = useState(3);
   useEffect(() => {
+    setProgressLife(100);
+    setProgressLife2(100);
     const countdownInterval = setInterval(() => {
-      setProgressLife(100);
-      setProgressLife2(100);
       if (count > 0) {
         setCount(count - 1);
       } else {
@@ -63,27 +66,38 @@ function FightButton({
     };
   }, [count]);
 
+  let content = null;
+  if (count === 0 && desactivateButton === false) {
+    content = (
+      <button className="resultFight" type="button" onClick={handleFight}>
+        Fight !
+      </button>
+    );
+  } else if (desactivateButton === false) {
+    content = <div className="timer">{count}</div>;
+  } else {
+    content = <div />;
+  }
+
   return (
     <div className="buttonFightTimer">
+      <audio ref={audio} muted>
+        <track kind="captions" />
+        <source src="/sons/se_common_finishhit.mp3" type="audio/mp3" />
+      </audio>
       <div className="fightButton">
         <div>
           <img
             className={`imageFighter ${animationFight}`}
-            src={imgFighter1}
+            src={selectHero1}
             alt="fighter1"
           />
         </div>
-        {count === 0 ? (
-          <button className="resultFight" type="button" onClick={handleFight}>
-            Fight !
-          </button>
-        ) : (
-          <div className="timer">{count}</div>
-        )}
+        {content}
         <div>
           <img
             className={`imageFighter ${animationFight2}`}
-            src={imgFighter2}
+            src={selectHero2}
             alt="fighter2"
           />
         </div>
@@ -93,10 +107,8 @@ function FightButton({
 }
 
 FightButton.propTypes = {
-  setProgressLife: PropTypes.func.isRequired,
-  setProgressLife2: PropTypes.func.isRequired,
-  imgFighter1: PropTypes.string.isRequired,
-  imgFighter2: PropTypes.string.isRequired,
+  selectHero1: PropTypes.string.isRequired,
+  selectHero2: PropTypes.string.isRequired,
 };
 
 export default FightButton;

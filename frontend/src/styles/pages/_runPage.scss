@@ -1,0 +1,349 @@
+.run {
+  background-image: url("./images/RunPage.png");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .logoBox {
+    display: flex;
+    justify-content: center;
+    font-size: 3.5vw;
+    padding-bottom: 5vh;
+    p {
+      color: white;
+      position: absolute;
+      left: 30vw;
+
+      text-shadow: 5px 5px 2px black;
+      text-decoration: overline;
+    }
+  }
+
+  .logoFight {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 20vw;
+  }
+
+  .runContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4vw;
+  }
+
+  .runTitle {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(247, 222, 89);
+    padding: 1%;
+    border-radius: 20px;
+    font-size: 30px;
+    border: 3px solid black;
+  }
+
+  .runVersus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 20px;
+  }
+
+  .Run1,
+  .Run2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    padding: 5%;
+    border-radius: 20px;
+    width: 20vw;
+    height: 1vh;
+    border: 3px solid black;
+  }
+
+  .runLogo {
+    background-color: transparent !important;
+  }
+
+  .runContainer {
+    position: absolute;
+    top: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .runTitle {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    // position: absolute;
+    // top: 10%;
+    // left: 50%;
+    // transform: translateX(-50%);
+    background-color: rgb(247, 222, 89);
+    padding: 1%;
+    border-radius: 20px;
+    font-size: 30px;
+    border: 3px solid black;
+  }
+
+  .runVersus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 20px;
+  }
+
+  .Run1,
+  .Run2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    padding: 5%;
+    border-radius: 20px;
+    width: 20vw;
+    height: 1vh;
+    border: 3px solid black;
+  }
+
+  .runLogo {
+    background-color: transparent !important;
+  }
+
+  .runCard1 {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    border-radius: 20px;
+    height: 25%;
+    background: linear-gradient(var(--hero-color), var(--vilain-color))
+      border-box;
+    border: 5px solid transparent;
+    transform: rotate(75deg);
+    margin-bottom: 2vh;
+  }
+
+  .runCard2 {
+    position: absolute;
+    bottom: 2%;
+    left: 15%;
+    border-radius: 20px;
+    height: 25%;
+    border: 5px solid black;
+    background: linear-gradient(var(--hero-color), var(--vilain-color))
+      border-box;
+    border: 5px solid transparent;
+    transform: rotate(75deg);
+    margin-bottom: 2vh;
+  }
+
+  .resultRun {
+    background-color: black;
+    color: white;
+    padding: 1% 3% 1% 3%;
+    border-radius: 30px;
+    font-size: 3vw;
+    width: 15vw;
+    align-self: center;
+    cursor: pointer;
+    // margin: 4%;
+  }
+
+  .timer {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: 15vw;
+    color: white;
+  }
+
+  .animationRun {
+    animation-name: run1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes run1 {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    15% {
+      transform: rotate(10deg) translate(5vw, -5vw);
+    }
+    25% {
+      transform: translate(10vw, 0);
+    }
+    40% {
+      transform: rotate(10deg) translate(15vw, -5vw);
+    }
+    50% {
+      transform: translate(20vw, 0);
+    }
+    65% {
+      transform: rotate(10deg) translate(25vw, -10vw);
+    }
+    75% {
+      transform: translate(30vw, 0);
+    }
+    90% {
+      transform: rotate(10deg) translate(50vw, -20vw);
+    }
+    100% {
+      transform: translate(80vw, 0);
+    }
+  }
+  .animationRun2 {
+    animation-name: run2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes run2 {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    15% {
+      transform: rotate(10deg) translate(8vw, -5vw);
+    }
+    25% {
+      transform: translate(15vw, 0);
+    }
+    40% {
+      transform: rotate(10deg) translate(25vw, -5vw);
+    }
+    50% {
+      transform: translate(30vw, 0);
+    }
+    65% {
+      transform: rotate(90deg) translate(0, -35vw);
+    }
+    100% {
+      transform: rotate(90deg) translate(0, -45vw);
+    }
+  }
+  .animationUpRun {
+    animation-name: runUp1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes runUp1 {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    10% {
+      transform: rotate(10deg) translate(5vw, -5vw);
+    }
+    20% {
+      transform: translate(10vw, 0);
+    }
+    30% {
+      transform: rotate(10deg) translate(15vw, -5vw);
+    }
+    40% {
+      transform: translate(20vw, 0);
+    }
+    50% {
+      transform: rotate(10deg) translate(25vw, -10vw);
+    }
+    60% {
+      transform: translate(30vw, 0);
+    }
+    70% {
+      transform: rotate(10deg) translate(50vw, -20vw);
+    }
+    80% {
+      transform: translate(70vw, 0);
+    }
+    100% {
+      transform: translate(70vw, 0);
+    }
+  }
+  .animationUpRun2 {
+    animation-name: runUp2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes runUp2 {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    10% {
+      transform: rotate(10deg) translate(12vw, -5vw);
+    }
+    20% {
+      transform: translate(25vw, 0);
+    }
+    30% {
+      transform: rotate(10deg) translate(35vw, -5vw);
+    }
+    40% {
+      transform: translate(40vw, 0);
+    }
+    50% {
+      transform: rotate(90deg) translate(3vw, -45vw);
+    }
+    85% {
+      transform: rotate(90deg) translate(3vw, -55vw);
+    }
+    100% {
+      transform: rotate(90deg) translate(3vw, -55vw);
+    }
+  }
+
+  @media screen and (max-width: 950px) {
+    .runTitle {
+      top: 8%;
+    }
+
+    .runContainer {
+      padding-top: 5%;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .run {
+      .runTitle {
+        font-size: 25px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 660px) {
+    .run {
+      .runTitle {
+        font-size: 15px;
+        top: 10%;
+      }
+    }
+    .runContainer {
+      padding-top: 10%;
+    }
+  }
+}

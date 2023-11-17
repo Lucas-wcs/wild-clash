@@ -7,7 +7,7 @@ import DisplayHero from "./DisplayHero";
 
 const responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
+    breakpoint: { max: 100000000000, min: 701 },
     items: 15,
     slidesToSlide: 6,
   },
@@ -59,8 +59,8 @@ function HeroesCard({
 
 HeroesCard.propTypes = {
   selectHero1: PropTypes.string.isRequired,
-  setSelectHero1: PropTypes.string.isRequired,
-  setSelectHero2: PropTypes.string.isRequired,
+  setSelectHero1: PropTypes.func.isRequired,
+  setSelectHero2: PropTypes.func.isRequired,
   selectHero2: PropTypes.string.isRequired,
 };
 export default HeroesCard;

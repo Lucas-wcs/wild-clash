@@ -10,7 +10,7 @@ function LaunchButton() {
 
   return (
     <div>
-      <button className="launchButton" type="button" onClick={handleNavigation}>
+      <button className="btn-shine" type="button" onClick={handleNavigation}>
         {" "}
         <span>Launch the fight</span>
       </button>

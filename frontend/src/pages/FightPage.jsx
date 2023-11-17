@@ -1,37 +1,52 @@
-import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useRef, useEffect } from "react";
+import HeroLoaderContext from "../contexts/HeroLoaderContext";
 import FightButton from "../components/FightButton";
 import HealthBar from "../components/HealthBar";
 
 function FightPage() {
-  const location = useLocation();
-  const imgFighter1 = location.state.selectHero1;
-  const imgFighter2 = location.state.selectHero2;
+  const { selectHero1, selectHero2 } = useContext(HeroLoaderContext);
+  const audio = useRef(null);
+  const audio2 = useRef(null);
 
-  const [progressLife, setProgressLife] = useState(0);
-  const [progressLife2, setProgressLife2] = useState(0);
+  useEffect(() => {
+    if (audio.current) {
+      audio.current.muted = false;
+      audio.current.play();
+    }
+    setTimeout(() => {
+      if (audio2.current) {
+        audio2.current.muted = false;
+        audio2.current.play();
+      }
+    }, 3800);
+  }, [audio]);
 
   return (
     <div className="fightPage">
+      <audio ref={audio} muted>
+        <track kind="captions" />
+        <source
+          src="/sons/three-two-one-fight-deep-voice-38382.mp3"
+          type="audio/mp3"
+        />
+      </audio>
+      <audio ref={audio2} muted>
+        <track kind="captions" />
+        <source
+          src="/sons/techno-syndrome-mortal-kombat-song-by-the-immortals_NaxR0wNS.mp3"
+          type="audio/mp3"
+        />
+      </audio>
       <div className="logoBox">
+        <p>1st Trial : RUMBLE !</p>
         <img
           className="logoFight"
           src="/images/logo_projet2.png"
           alt="Logo Clash Heroes"
         />
       </div>
-      <HealthBar
-        imgFighter1={imgFighter1}
-        imgFighter2={imgFighter2}
-        value={progressLife}
-        value2={progressLife2}
-      />
-      <FightButton
-        setProgressLife={setProgressLife}
-        setProgressLife2={setProgressLife2}
-        imgFighter1={imgFighter1}
-        imgFighter2={imgFighter2}
-      />
+      <HealthBar selectHero1={selectHero1} selectHero2={selectHero2} />
+      <FightButton selectHero1={selectHero1} selectHero2={selectHero2} />
     </div>
   );
 }
