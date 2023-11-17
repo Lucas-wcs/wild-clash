@@ -114,7 +114,7 @@ function BombPage() {
           onClick={handleBomb}
           disabled={disabledCounter}
         >
-          <img src="./public/images/runbomb.png" alt="" />
+          <img src="./images/runbomb.png" alt="" />
           <div className="test">{timer}</div>
         </button>
       </div>

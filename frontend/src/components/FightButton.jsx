@@ -83,7 +83,7 @@ function FightButton({ selectHero1, selectHero2 }) {
     <div className="buttonFightTimer">
       <audio ref={audio} muted>
         <track kind="captions" />
-        <source src="public\sons\se_common_finishhit.mp3" type="audio/mp3" />
+        <source src="/sons/se_common_finishhit.mp3" type="audio/mp3" />
       </audio>
       <div className="fightButton">
         <div>
